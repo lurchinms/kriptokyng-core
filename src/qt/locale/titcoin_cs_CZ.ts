@@ -132,7 +132,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Synchronizuji se sítí...</translation>
@@ -166,8 +166,8 @@
         <translation>Změnit heslo k šifrování peněženky</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -297,8 +297,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     </context>
 <context>
@@ -662,7 +662,7 @@
     </message>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Options:</source>
         <translation>Možnosti:</translation>

@@ -76,7 +76,7 @@
     </message>
 </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Pasirašyti ži&amp;nutę...</translation>
@@ -162,8 +162,8 @@
         <translation>Blokai iš naujo indeksuojami...</translation>
     </message>
     <message>
-        <source>Send coins to a Titcoin address</source>
-        <translation>Siųsti monetas Titcoin adresui</translation>
+        <source>Send coins to a kriptoyng address</source>
+        <translation>Siųsti monetas kriptoyng adresui</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -186,8 +186,8 @@
         <translation>&amp;Tikrinti žinutę...</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -383,8 +383,8 @@
         <translation>Sveiki</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Error</source>
@@ -436,8 +436,8 @@
         <translation>Piniginė</translation>
     </message>
     <message>
-        <source>Automatically open the Titcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatiškai atidaryti Titcoin kliento prievadą maršrutizatoriuje. Tai veikia tik tada, kai jūsų maršrutizatorius palaiko UPnP ir ji įjungta.</translation>
+        <source>Automatically open the kriptoyng client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatiškai atidaryti kriptoyng kliento prievadą maršrutizatoriuje. Tai veikia tik tada, kai jūsų maršrutizatorius palaiko UPnP ir ji įjungta.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -877,7 +877,7 @@
         <translation>Įveskite pranešimą, kurį norite pasirašyti čia</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Titcoin address</source>
+        <source>Sign the message to prove you own this kriptoyng address</source>
         <translation>Registruotis žinute įrodymuii, kad turite šį adresą</translation>
     </message>
     <message>
@@ -893,8 +893,8 @@
         <translation>&amp;Patikrinti žinutę</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Titcoin address</source>
-        <translation>Patikrinkite žinutę, jog įsitikintumėte, kad ją pasirašė nurodytas Titcoin adresas</translation>
+        <source>Verify the message to ensure it was signed with the specified kriptoyng address</source>
+        <translation>Patikrinkite žinutę, jog įsitikintumėte, kad ją pasirašė nurodytas kriptoyng adresas</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -948,7 +948,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Options:</source>
         <translation>Parinktys:</translation>
@@ -970,8 +970,8 @@
         <translation>Dirbti fone kaip šešėlyje ir priimti komandas</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin branduolys</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng branduolys</translation>
     </message>
     <message>
         <source>Error opening block database</source>

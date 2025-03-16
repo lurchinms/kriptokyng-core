@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_UTILITYDIALOG_H
-#define TITCOIN_QT_UTILITYDIALOG_H
+#ifndef kriptoyng_QT_UTILITYDIALOG_H
+#define kriptoyng_QT_UTILITYDIALOG_H
 
 #include <QDialog>
 #include <QObject>
 
-class TitcoinGUI;
+class kriptoyngGUI;
 
 namespace Ui {
     class HelpMessageDialog;
@@ -42,10 +42,10 @@ class ShutdownWindow : public QWidget
 
 public:
     explicit ShutdownWindow(QWidget *parent=0, Qt::WindowFlags f=0);
-    static QWidget *showShutdownWindow(TitcoinGUI *window);
+    static QWidget *showShutdownWindow(kriptoyngGUI *window);
 
 protected:
     void closeEvent(QCloseEvent *event);
 };
 
-#endif // TITCOIN_QT_UTILITYDIALOG_H
+#endif // kriptoyng_QT_UTILITYDIALOG_H

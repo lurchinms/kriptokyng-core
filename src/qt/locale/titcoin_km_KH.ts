@@ -88,10 +88,10 @@
     </message>
 </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
-        <source>Send coins to a Titcoin address</source>
-        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន Titcoin មួយ</translation>
+        <source>Send coins to a kriptoyng address</source>
+        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន kriptoyng មួយ</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -210,6 +210,6 @@
     </message>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     </context>
 </TS>

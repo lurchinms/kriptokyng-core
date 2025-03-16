@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_SUPPORT_LOCKEDPOOL_H
-#define TITCOIN_SUPPORT_LOCKEDPOOL_H
+#ifndef kriptoyng_SUPPORT_LOCKEDPOOL_H
+#define kriptoyng_SUPPORT_LOCKEDPOOL_H
 
 #include <stdint.h>
 #include <list>
@@ -228,4 +228,4 @@ private:
     static std::once_flag init_flag;
 };
 
-#endif // TITCOIN_SUPPORT_LOCKEDPOOL_H
+#endif // kriptoyng_SUPPORT_LOCKEDPOOL_H

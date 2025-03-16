@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_RECEIVECOINSDIALOG_H
-#define TITCOIN_QT_RECEIVECOINSDIALOG_H
+#ifndef kriptoyng_QT_RECEIVECOINSDIALOG_H
+#define kriptoyng_QT_RECEIVECOINSDIALOG_H
 
 #include <qt/guiutil.h>
 
@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class QModelIndex;
 QT_END_NAMESPACE
 
-/** Dialog for requesting payment of titcoins */
+/** Dialog for requesting payment of kriptoyngs */
 class ReceiveCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -77,4 +77,4 @@ private Q_SLOTS:
     void copyAmount();
 };
 
-#endif // TITCOIN_QT_RECEIVECOINSDIALOG_H
+#endif // kriptoyng_QT_RECEIVECOINSDIALOG_H

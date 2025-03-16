@@ -4,10 +4,10 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the invalidateblock RPC."""
 
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import *
 
-class InvalidateTest(TitcoinTestFramework):
+class InvalidateTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3

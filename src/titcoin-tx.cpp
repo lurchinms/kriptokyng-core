@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #include <base58.h>
@@ -55,10 +55,10 @@ static int AppInitRawTx(int argc, char* argv[])
     if (argc<2 || gArgs.IsArgSet("-?") || gArgs.IsArgSet("-h") || gArgs.IsArgSet("-help"))
     {
         // First part of help message is specific to this utility
-        std::string strUsage = strprintf(_("%s titcoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = strprintf(_("%s kriptoyng-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  titcoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded titcoin transaction") + "\n" +
-              "  titcoin-tx [options] -create [commands]   " + _("Create hex-encoded titcoin transaction") + "\n" +
+              "  kriptoyng-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded kriptoyng transaction") + "\n" +
+              "  kriptoyng-tx [options] -create [commands]   " + _("Create hex-encoded kriptoyng transaction") + "\n" +
               "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());
@@ -564,7 +564,7 @@ static void MutateTxSign(CMutableTransaction& tx, const std::string& flagStr)
     for (unsigned int kidx = 0; kidx < keysObj.size(); kidx++) {
         if (!keysObj[kidx].isStr())
             throw std::runtime_error("privatekey not a std::string");
-        CTitcoinSecret vchSecret;
+        CkriptoyngSecret vchSecret;
         bool fGood = vchSecret.SetString(keysObj[kidx].getValStr());
         if (!fGood)
             throw std::runtime_error("privatekey not valid");
@@ -802,7 +802,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw std::runtime_error("too few parameters");
 
-            // param: hex-encoded titcoin transaction
+            // param: hex-encoded kriptoyng transaction
             std::string strHexTx(argv[1]);
             if (strHexTx == "-")                 // "-" implies standard input
                 strHexTx = readStdin();

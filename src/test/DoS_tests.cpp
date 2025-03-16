@@ -14,7 +14,7 @@
 #include <util.h>
 #include <validation.h>
 
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <stdint.h>
 

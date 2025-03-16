@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_NOTIFICATOR_H
-#define TITCOIN_QT_NOTIFICATOR_H
+#ifndef kriptoyng_QT_NOTIFICATOR_H
+#define kriptoyng_QT_NOTIFICATOR_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #include <QIcon>
@@ -74,4 +74,4 @@ private:
 #endif
 };
 
-#endif // TITCOIN_QT_NOTIFICATOR_H
+#endif // kriptoyng_QT_NOTIFICATOR_H

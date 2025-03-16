@@ -18,28 +18,28 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-TITCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+kriptoyng_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-TITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
-TITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
+kriptoyng_INCLUDES += -I$(srcdir)/secp256k1/include
+kriptoyng_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBTITCOIN_SERVER=libtitcoin_server.a
-LIBTITCOIN_COMMON=libtitcoin_common.a
-LIBTITCOIN_CONSENSUS=libtitcoin_consensus.a
-LIBTITCOIN_CLI=libtitcoin_cli.a
-LIBTITCOIN_UTIL=libtitcoin_util.a
-LIBTITCOIN_CRYPTO=crypto/libtitcoin_crypto.a
-LIBTITCOINQT=qt/libtitcoinqt.a
+LIBkriptoyng_SERVER=libkriptoyng_server.a
+LIBkriptoyng_COMMON=libkriptoyng_common.a
+LIBkriptoyng_CONSENSUS=libkriptoyng_consensus.a
+LIBkriptoyng_CLI=libkriptoyng_cli.a
+LIBkriptoyng_UTIL=libkriptoyng_util.a
+LIBkriptoyng_CRYPTO=crypto/libkriptoyng_crypto.a
+LIBkriptoyngQT=qt/libkriptoyngqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBTITCOIN_ZMQ=libtitcoin_zmq.a
+LIBkriptoyng_ZMQ=libkriptoyng_zmq.a
 endif
-if BUILD_TITCOIN_LIBS
-LIBTITCOINCONSENSUS=libtitcoinconsensus.la
+if BUILD_kriptoyng_LIBS
+LIBkriptoyngCONSENSUS=libkriptoyngconsensus.la
 endif
 if ENABLE_WALLET
-LIBTITCOIN_WALLET=libtitcoin_wallet.a
+LIBkriptoyng_WALLET=libkriptoyng_wallet.a
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -48,33 +48,33 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBTITCOIN_CRYPTO) \
-  $(LIBTITCOIN_UTIL) \
-  $(LIBTITCOIN_COMMON) \
-  $(LIBTITCOIN_CONSENSUS) \
-  $(LIBTITCOIN_SERVER) \
-  $(LIBTITCOIN_CLI) \
-  $(LIBTITCOIN_WALLET) \
-  $(LIBTITCOIN_ZMQ)
+  $(LIBkriptoyng_CRYPTO) \
+  $(LIBkriptoyng_UTIL) \
+  $(LIBkriptoyng_COMMON) \
+  $(LIBkriptoyng_CONSENSUS) \
+  $(LIBkriptoyng_SERVER) \
+  $(LIBkriptoyng_CLI) \
+  $(LIBkriptoyng_WALLET) \
+  $(LIBkriptoyng_ZMQ)
 
-lib_LTLIBRARIES = $(LIBTITCOINCONSENSUS)
+lib_LTLIBRARIES = $(LIBkriptoyngCONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_TITCOIND
-  bin_PROGRAMS += titcoind
+if BUILD_kriptoyngD
+  bin_PROGRAMS += kriptoyngd
 endif
 
-if BUILD_TITCOIN_UTILS
-  bin_PROGRAMS += titcoin-cli titcoin-tx
+if BUILD_kriptoyng_UTILS
+  bin_PROGRAMS += kriptoyng-cli kriptoyng-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# titcoin core #
-TITCOIN_CORE_H = \
+# kriptoyng core #
+kriptoyng_CORE_H = \
   addrdb.h \
   addrman.h \
   base58.h \
@@ -181,12 +181,12 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh "$(abs_top_builddir)/src/obj/build.h" \
 	  "$(abs_top_srcdir)"
-libtitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
+libkriptoyng_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between titcoind and titcoin-qt
-libtitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libtitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtitcoin_server_a_SOURCES = \
+# server: shared between kriptoyngd and kriptoyng-qt
+libkriptoyng_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libkriptoyng_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyng_server_a_SOURCES = \
   addrdb.cpp \
   addrman.cpp \
   bloom.cpp \
@@ -225,23 +225,23 @@ libtitcoin_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(TITCOIN_CORE_H)
+  $(kriptoyng_CORE_H)
 
 if ENABLE_ZMQ
-libtitcoin_zmq_a_CPPFLAGS = $(TITCOIN_INCLUDES) $(ZMQ_CFLAGS)
-libtitcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtitcoin_zmq_a_SOURCES = \
+libkriptoyng_zmq_a_CPPFLAGS = $(kriptoyng_INCLUDES) $(ZMQ_CFLAGS)
+libkriptoyng_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyng_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
   zmq/zmqnotificationinterface.cpp \
   zmq/zmqpublishnotifier.cpp
 endif
 
 
-# wallet: shared between titcoind and titcoin-qt, but only linked
+# wallet: shared between kriptoyngd and kriptoyng-qt, but only linked
 # when wallet enabled
-libtitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES)
-libtitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtitcoin_wallet_a_SOURCES = \
+libkriptoyng_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES)
+libkriptoyng_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyng_wallet_a_SOURCES = \
   wallet/crypter.cpp \
   wallet/db.cpp \
   wallet/feebumper.cpp \
@@ -252,12 +252,12 @@ libtitcoin_wallet_a_SOURCES = \
   wallet/wallet.cpp \
   wallet/walletdb.cpp \
   wallet/walletutil.cpp \
-  $(TITCOIN_CORE_H)
+  $(kriptoyng_CORE_H)
 
 # crypto primitives library
-crypto_libtitcoin_crypto_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libtitcoin_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libtitcoin_crypto_a_SOURCES = \
+crypto_libkriptoyng_crypto_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libkriptoyng_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libkriptoyng_crypto_a_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
   crypto/chacha20.h \
@@ -277,13 +277,13 @@ crypto_libtitcoin_crypto_a_SOURCES = \
   crypto/sha512.h
 
 if USE_ASM
-crypto_libtitcoin_crypto_a_SOURCES += crypto/sha256_sse4.cpp
+crypto_libkriptoyng_crypto_a_SOURCES += crypto/sha256_sse4.cpp
 endif
 
 # consensus: shared between all executables that validate any consensus rules.
-libtitcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES)
-libtitcoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtitcoin_consensus_a_SOURCES = \
+libkriptoyng_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES)
+libkriptoyng_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyng_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
@@ -300,7 +300,7 @@ libtitcoin_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/titcoinconsensus.cpp \
+  script/kriptoyngconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -315,10 +315,10 @@ libtitcoin_consensus_a_SOURCES = \
   utilstrencodings.h \
   version.h
 
-# common: shared between titcoind, and titcoin-qt and non-server tools
-libtitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES)
-libtitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtitcoin_common_a_SOURCES = \
+# common: shared between kriptoyngd, and kriptoyng-qt and non-server tools
+libkriptoyng_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES)
+libkriptoyng_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyng_common_a_SOURCES = \
   base58.cpp \
   bech32.cpp \
   chainparams.cpp \
@@ -336,14 +336,14 @@ libtitcoin_common_a_SOURCES = \
   script/sign.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(TITCOIN_CORE_H)
+  $(kriptoyng_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libtitcoin_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES)
-libtitcoin_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtitcoin_util_a_SOURCES = \
+libkriptoyng_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES)
+libkriptoyng_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyng_util_a_SOURCES = \
   support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
@@ -361,101 +361,101 @@ libtitcoin_util_a_SOURCES = \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(TITCOIN_CORE_H)
+  $(kriptoyng_CORE_H)
 
 if GLIBC_BACK_COMPAT
-libtitcoin_util_a_SOURCES += compat/glibc_compat.cpp
+libkriptoyng_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between titcoin-cli and titcoin-qt
-libtitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES)
-libtitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtitcoin_cli_a_SOURCES = \
+# cli: shared between kriptoyng-cli and kriptoyng-qt
+libkriptoyng_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES)
+libkriptoyng_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyng_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(TITCOIN_CORE_H)
+  $(kriptoyng_CORE_H)
 
-nodist_libtitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libkriptoyng_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# titcoind binary #
-titcoind_SOURCES = titcoind.cpp
-titcoind_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES)
-titcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-titcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# kriptoyngd binary #
+kriptoyngd_SOURCES = kriptoyngd.cpp
+kriptoyngd_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES)
+kriptoyngd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+kriptoyngd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-titcoind_SOURCES += titcoind-res.rc
+kriptoyngd_SOURCES += kriptoyngd-res.rc
 endif
 
-titcoind_LDADD = \
-  $(LIBTITCOIN_SERVER) \
-  $(LIBTITCOIN_COMMON) \
+kriptoyngd_LDADD = \
+  $(LIBkriptoyng_SERVER) \
+  $(LIBkriptoyng_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBTITCOIN_UTIL) \
-  $(LIBTITCOIN_WALLET) \
-  $(LIBTITCOIN_ZMQ) \
-  $(LIBTITCOIN_CONSENSUS) \
-  $(LIBTITCOIN_CRYPTO) \
+  $(LIBkriptoyng_UTIL) \
+  $(LIBkriptoyng_WALLET) \
+  $(LIBkriptoyng_ZMQ) \
+  $(LIBkriptoyng_CONSENSUS) \
+  $(LIBkriptoyng_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-titcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+kriptoyngd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# titcoin-cli binary #
-titcoin_cli_SOURCES = titcoin-cli.cpp
-titcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES) $(EVENT_CFLAGS)
-titcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-titcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# kriptoyng-cli binary #
+kriptoyng_cli_SOURCES = kriptoyng-cli.cpp
+kriptoyng_cli_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES) $(EVENT_CFLAGS)
+kriptoyng_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+kriptoyng_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-titcoin_cli_SOURCES += titcoin-cli-res.rc
+kriptoyng_cli_SOURCES += kriptoyng-cli-res.rc
 endif
 
-titcoin_cli_LDADD = \
-  $(LIBTITCOIN_CLI) \
+kriptoyng_cli_LDADD = \
+  $(LIBkriptoyng_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBTITCOIN_UTIL) \
-  $(LIBTITCOIN_CRYPTO)
+  $(LIBkriptoyng_UTIL) \
+  $(LIBkriptoyng_CRYPTO)
 
-titcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+kriptoyng_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# titcoin-tx binary #
-titcoin_tx_SOURCES = titcoin-tx.cpp
-titcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES)
-titcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-titcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# kriptoyng-tx binary #
+kriptoyng_tx_SOURCES = kriptoyng-tx.cpp
+kriptoyng_tx_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES)
+kriptoyng_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+kriptoyng_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-titcoin_tx_SOURCES += titcoin-tx-res.rc
+kriptoyng_tx_SOURCES += kriptoyng-tx-res.rc
 endif
 
-titcoin_tx_LDADD = \
+kriptoyng_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBTITCOIN_COMMON) \
-  $(LIBTITCOIN_UTIL) \
-  $(LIBTITCOIN_CONSENSUS) \
-  $(LIBTITCOIN_CRYPTO) \
+  $(LIBkriptoyng_COMMON) \
+  $(LIBkriptoyng_UTIL) \
+  $(LIBkriptoyng_CONSENSUS) \
+  $(LIBkriptoyng_CRYPTO) \
   $(LIBSECP256K1)
 
-titcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+kriptoyng_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# titcoinconsensus library #
-if BUILD_TITCOIN_LIBS
-include_HEADERS = script/titcoinconsensus.h
-libtitcoinconsensus_la_SOURCES = $(crypto_libtitcoin_crypto_a_SOURCES) $(libtitcoin_consensus_a_SOURCES)
+# kriptoyngconsensus library #
+if BUILD_kriptoyng_LIBS
+include_HEADERS = script/kriptoyngconsensus.h
+libkriptoyngconsensus_la_SOURCES = $(crypto_libkriptoyng_crypto_a_SOURCES) $(libkriptoyng_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libtitcoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libkriptoyngconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libtitcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libtitcoinconsensus_la_LIBADD = $(LIBSECP256K1)
-libtitcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_TITCOIN_INTERNAL
-libtitcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libkriptoyngconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libkriptoyngconsensus_la_LIBADD = $(LIBSECP256K1)
+libkriptoyngconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_kriptoyng_INTERNAL
+libkriptoyngconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
@@ -485,12 +485,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST = $(CTAES_DIST)
 
 
-config/titcoin-config.h: config/stamp-h1
+config/kriptoyng-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/titcoin-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/kriptoyng-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/titcoin-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/titcoin-config.h.in
+$(top_srcdir)/$(subdir)/config/kriptoyng-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/kriptoyng-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

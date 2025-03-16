@@ -5,7 +5,7 @@
 #include <qt/overviewpage.h>
 #include <qt/forms/ui_overviewpage.h>
 
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngunits.h>
 #include <qt/clientmodel.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
@@ -26,7 +26,7 @@ class TxViewDelegate : public QAbstractItemDelegate
     Q_OBJECT
 public:
     explicit TxViewDelegate(const PlatformStyle *_platformStyle, QObject *parent=nullptr):
-        QAbstractItemDelegate(parent), unit(TitcoinUnits::TIT),
+        QAbstractItemDelegate(parent), unit(kriptoyngUnits::TIT),
         platformStyle(_platformStyle)
     {
 
@@ -84,7 +84,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
-        QString amountText = TitcoinUnits::formatWithUnit(unit, amount, true, TitcoinUnits::separatorAlways);
+        QString amountText = kriptoyngUnits::formatWithUnit(unit, amount, true, kriptoyngUnits::separatorAlways);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -168,14 +168,14 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     currentWatchOnlyBalance = watchOnlyBalance;
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
-    ui->labelBalance->setText(TitcoinUnits::formatWithUnit(unit, balance, false, TitcoinUnits::separatorAlways));
-    ui->labelUnconfirmed->setText(TitcoinUnits::formatWithUnit(unit, unconfirmedBalance, false, TitcoinUnits::separatorAlways));
-    ui->labelImmature->setText(TitcoinUnits::formatWithUnit(unit, immatureBalance, false, TitcoinUnits::separatorAlways));
-    ui->labelTotal->setText(TitcoinUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, TitcoinUnits::separatorAlways));
-    ui->labelWatchAvailable->setText(TitcoinUnits::formatWithUnit(unit, watchOnlyBalance, false, TitcoinUnits::separatorAlways));
-    ui->labelWatchPending->setText(TitcoinUnits::formatWithUnit(unit, watchUnconfBalance, false, TitcoinUnits::separatorAlways));
-    ui->labelWatchImmature->setText(TitcoinUnits::formatWithUnit(unit, watchImmatureBalance, false, TitcoinUnits::separatorAlways));
-    ui->labelWatchTotal->setText(TitcoinUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, TitcoinUnits::separatorAlways));
+    ui->labelBalance->setText(kriptoyngUnits::formatWithUnit(unit, balance, false, kriptoyngUnits::separatorAlways));
+    ui->labelUnconfirmed->setText(kriptoyngUnits::formatWithUnit(unit, unconfirmedBalance, false, kriptoyngUnits::separatorAlways));
+    ui->labelImmature->setText(kriptoyngUnits::formatWithUnit(unit, immatureBalance, false, kriptoyngUnits::separatorAlways));
+    ui->labelTotal->setText(kriptoyngUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, kriptoyngUnits::separatorAlways));
+    ui->labelWatchAvailable->setText(kriptoyngUnits::formatWithUnit(unit, watchOnlyBalance, false, kriptoyngUnits::separatorAlways));
+    ui->labelWatchPending->setText(kriptoyngUnits::formatWithUnit(unit, watchUnconfBalance, false, kriptoyngUnits::separatorAlways));
+    ui->labelWatchImmature->setText(kriptoyngUnits::formatWithUnit(unit, watchImmatureBalance, false, kriptoyngUnits::separatorAlways));
+    ui->labelWatchTotal->setText(kriptoyngUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, kriptoyngUnits::separatorAlways));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users

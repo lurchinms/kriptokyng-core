@@ -80,7 +80,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>
@@ -214,6 +214,6 @@
     </message>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     </context>
 </TS>

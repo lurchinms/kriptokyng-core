@@ -11,8 +11,8 @@
  * - E-mail usually won't line-break if there's no punctuation to break at.
  * - Double-clicking selects the whole string as one word if it's all alphanumeric.
  */
-#ifndef TITCOIN_BASE58_H
-#define TITCOIN_BASE58_H
+#ifndef kriptoyng_BASE58_H
+#define kriptoyng_BASE58_H
 
 #include <chainparams.h>
 #include <key.h>
@@ -97,7 +97,7 @@ public:
 /**
  * A base58-encoded secret key
  */
-class CTitcoinSecret : public CBase58Data
+class CkriptoyngSecret : public CBase58Data
 {
 public:
     void SetKey(const CKey& vchSecret);
@@ -106,11 +106,11 @@ public:
     bool SetString(const char* pszSecret);
     bool SetString(const std::string& strSecret);
 
-    CTitcoinSecret(const CKey& vchSecret) { SetKey(vchSecret); }
-    CTitcoinSecret() {}
+    CkriptoyngSecret(const CKey& vchSecret) { SetKey(vchSecret); }
+    CkriptoyngSecret() {}
 };
 
-template<typename K, int Size, CChainParams::Base58Type Type> class CTitcoinExtKeyBase : public CBase58Data
+template<typename K, int Size, CChainParams::Base58Type Type> class CkriptoyngExtKeyBase : public CBase58Data
 {
 public:
     void SetKey(const K &key) {
@@ -128,23 +128,23 @@ public:
         return ret;
     }
 
-    CTitcoinExtKeyBase(const K &key) {
+    CkriptoyngExtKeyBase(const K &key) {
         SetKey(key);
     }
 
-    CTitcoinExtKeyBase(const std::string& strBase58c) {
+    CkriptoyngExtKeyBase(const std::string& strBase58c) {
         SetString(strBase58c.c_str(), Params().Base58Prefix(Type).size());
     }
 
-    CTitcoinExtKeyBase() {}
+    CkriptoyngExtKeyBase() {}
 };
 
-typedef CTitcoinExtKeyBase<CExtKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_SECRET_KEY> CTitcoinExtKey;
-typedef CTitcoinExtKeyBase<CExtPubKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_PUBLIC_KEY> CTitcoinExtPubKey;
+typedef CkriptoyngExtKeyBase<CExtKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_SECRET_KEY> CkriptoyngExtKey;
+typedef CkriptoyngExtKeyBase<CExtPubKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_PUBLIC_KEY> CkriptoyngExtPubKey;
 
 std::string EncodeDestination(const CTxDestination& dest);
 CTxDestination DecodeDestination(const std::string& str);
 bool IsValidDestinationString(const std::string& str);
 bool IsValidDestinationString(const std::string& str, const CChainParams& params);
 
-#endif // TITCOIN_BASE58_H
+#endif // kriptoyng_BASE58_H

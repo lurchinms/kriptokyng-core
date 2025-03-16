@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TEST_COMPATTESTS_H
-#define TITCOIN_QT_TEST_COMPATTESTS_H
+#ifndef kriptoyng_QT_TEST_COMPATTESTS_H
+#define kriptoyng_QT_TEST_COMPATTESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -16,4 +16,4 @@ private Q_SLOTS:
     void bswapTests();
 };
 
-#endif // TITCOIN_QT_TEST_COMPATTESTS_H
+#endif // kriptoyng_QT_TEST_COMPATTESTS_H

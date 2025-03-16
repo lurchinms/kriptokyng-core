@@ -4,13 +4,13 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test using named arguments for RPCs."""
 
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
-class NamedArgumentTest(TitcoinTestFramework):
+class NamedArgumentTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 

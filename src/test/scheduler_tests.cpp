@@ -5,7 +5,7 @@
 #include <random.h>
 #include <scheduler.h>
 
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <boost/bind.hpp>
 #include <boost/thread.hpp>

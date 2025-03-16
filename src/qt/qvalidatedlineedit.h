@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_QVALIDATEDLINEEDIT_H
-#define TITCOIN_QT_QVALIDATEDLINEEDIT_H
+#ifndef kriptoyng_QT_QVALIDATEDLINEEDIT_H
+#define kriptoyng_QT_QVALIDATEDLINEEDIT_H
 
 #include <QLineEdit>
 
@@ -40,4 +40,4 @@ private Q_SLOTS:
     void checkValidity();
 };
 
-#endif // TITCOIN_QT_QVALIDATEDLINEEDIT_H
+#endif // kriptoyng_QT_QVALIDATEDLINEEDIT_H

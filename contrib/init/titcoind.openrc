@@ -2,41 +2,41 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/titcoin/.titcoin" ]; then
-	TITCOIND_DEFAULT_DATADIR="/var/lib/titcoin/.titcoin"
+if [ -d "/var/lib/kriptoyng/.kriptoyng" ]; then
+	kriptoyngD_DEFAULT_DATADIR="/var/lib/kriptoyng/.kriptoyng"
 else
-	TITCOIND_DEFAULT_DATADIR="/var/lib/titcoind"
+	kriptoyngD_DEFAULT_DATADIR="/var/lib/kriptoyngd"
 fi
 
-TITCOIND_CONFIGFILE=${TITCOIND_CONFIGFILE:-/etc/titcoin/titcoin.conf}
-TITCOIND_PIDDIR=${TITCOIND_PIDDIR:-/var/run/titcoind}
-TITCOIND_PIDFILE=${TITCOIND_PIDFILE:-${TITCOIND_PIDDIR}/titcoind.pid}
-TITCOIND_DATADIR=${TITCOIND_DATADIR:-${TITCOIND_DEFAULT_DATADIR}}
-TITCOIND_USER=${TITCOIND_USER:-${TITCOIN_USER:-titcoin}}
-TITCOIND_GROUP=${TITCOIND_GROUP:-titcoin}
-TITCOIND_BIN=${TITCOIND_BIN:-/usr/bin/titcoind}
-TITCOIND_NICE=${TITCOIND_NICE:-${NICELEVEL:-0}}
-TITCOIND_OPTS="${TITCOIND_OPTS:-${TITCOIN_OPTS}}"
+kriptoyngD_CONFIGFILE=${kriptoyngD_CONFIGFILE:-/etc/kriptoyng/kriptoyng.conf}
+kriptoyngD_PIDDIR=${kriptoyngD_PIDDIR:-/var/run/kriptoyngd}
+kriptoyngD_PIDFILE=${kriptoyngD_PIDFILE:-${kriptoyngD_PIDDIR}/kriptoyngd.pid}
+kriptoyngD_DATADIR=${kriptoyngD_DATADIR:-${kriptoyngD_DEFAULT_DATADIR}}
+kriptoyngD_USER=${kriptoyngD_USER:-${kriptoyng_USER:-kriptoyng}}
+kriptoyngD_GROUP=${kriptoyngD_GROUP:-kriptoyng}
+kriptoyngD_BIN=${kriptoyngD_BIN:-/usr/bin/kriptoyngd}
+kriptoyngD_NICE=${kriptoyngD_NICE:-${NICELEVEL:-0}}
+kriptoyngD_OPTS="${kriptoyngD_OPTS:-${kriptoyng_OPTS}}"
 
-name="Titcoin Daemon"
-description="Titcoin cryptocurrency P2P network daemon"
+name="kriptoyng Daemon"
+description="kriptoyng cryptocurrency P2P network daemon"
 
-command="/usr/bin/titcoind"
-command_args="-pid=\"${TITCOIND_PIDFILE}\" \
-		-conf=\"${TITCOIND_CONFIGFILE}\" \
-		-datadir=\"${TITCOIND_DATADIR}\" \
+command="/usr/bin/kriptoyngd"
+command_args="-pid=\"${kriptoyngD_PIDFILE}\" \
+		-conf=\"${kriptoyngD_CONFIGFILE}\" \
+		-datadir=\"${kriptoyngD_DATADIR}\" \
 		-daemon \
-		${TITCOIND_OPTS}"
+		${kriptoyngD_OPTS}"
 
-required_files="${TITCOIND_CONFIGFILE}"
-start_stop_daemon_args="-u ${TITCOIND_USER} \
-			-N ${TITCOIND_NICE} -w 2000"
-pidfile="${TITCOIND_PIDFILE}"
+required_files="${kriptoyngD_CONFIGFILE}"
+start_stop_daemon_args="-u ${kriptoyngD_USER} \
+			-N ${kriptoyngD_NICE} -w 2000"
+pidfile="${kriptoyngD_PIDFILE}"
 
 # The retry schedule to use when stopping the daemon. Could be either
 # a timeout in seconds or multiple signal/timeout pairs (like
 # "SIGKILL/180 SIGTERM/300")
-retry="${TITCOIND_SIGTERM_TIMEOUT}"
+retry="${kriptoyngD_SIGTERM_TIMEOUT}"
 
 depend() {
 	need localmount net
@@ -50,29 +50,29 @@ start_pre() {
 	checkpath \
 	-d \
 	--mode 0750 \
-	--owner "${TITCOIND_USER}:${TITCOIND_GROUP}" \
-	"${TITCOIND_DATADIR}"
+	--owner "${kriptoyngD_USER}:${kriptoyngD_GROUP}" \
+	"${kriptoyngD_DATADIR}"
 
 	checkpath \
 	-d \
 	--mode 0755 \
-	--owner "${TITCOIND_USER}:${TITCOIND_GROUP}" \
-	"${TITCOIND_PIDDIR}"
+	--owner "${kriptoyngD_USER}:${kriptoyngD_GROUP}" \
+	"${kriptoyngD_PIDDIR}"
 
 	checkpath -f \
-	-o ${TITCOIND_USER}:${TITCOIND_GROUP} \
+	-o ${kriptoyngD_USER}:${kriptoyngD_GROUP} \
 	-m 0660 \
-	${TITCOIND_CONFIGFILE}
+	${kriptoyngD_CONFIGFILE}
 
 	checkconfig || return 1
 }
 
 checkconfig()
 {
-	if ! grep -qs '^rpcpassword=' "${TITCOIND_CONFIGFILE}" ; then
+	if ! grep -qs '^rpcpassword=' "${kriptoyngD_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run titcoind."
-		eerror "The setting must appear in ${TITCOIND_CONFIGFILE}"
+		eerror "ERROR: You must set a secure rpcpassword to run kriptoyngd."
+		eerror "The setting must appear in ${kriptoyngD_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
 		eerror "and must not be the same as the rpcuser setting."
@@ -84,7 +84,7 @@ checkconfig()
 		eerror "It is recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"Titcoin Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"kriptoyng Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

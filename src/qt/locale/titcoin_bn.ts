@@ -36,7 +36,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Warning</source>
         <translation>সতর্কতা</translation>
@@ -158,7 +158,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Block creation options:</source>
         <translation>ব্লক তৈরির অপশনগুলো:</translation>

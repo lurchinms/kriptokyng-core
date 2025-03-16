@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
-#define TITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#ifndef kriptoyng_QT_RECENTREQUESTSTABLEMODEL_H
+#define kriptoyng_QT_RECENTREQUESTSTABLEMODEL_H
 
 #include <qt/walletmodel.h>
 
@@ -52,7 +52,7 @@ private:
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / titcoin: URIs.
+/** Model for list of recently generated payment requests / kriptoyng: URIs.
  * Part of wallet model.
  */
 class RecentRequestsTableModel: public QAbstractTableModel
@@ -104,4 +104,4 @@ private:
     QString getAmountTitle();
 };
 
-#endif // TITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#endif // kriptoyng_QT_RECENTREQUESTSTABLEMODEL_H

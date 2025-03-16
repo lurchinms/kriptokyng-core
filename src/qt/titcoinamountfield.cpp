@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <qt/titcoinamountfield.h>
+#include <qt/kriptoyngamountfield.h>
 
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngunits.h>
 #include <qt/guiconstants.h>
 #include <qt/qvaluecombobox.h>
 
@@ -24,7 +24,7 @@ class AmountSpinBox: public QAbstractSpinBox
 public:
     explicit AmountSpinBox(QWidget *parent):
         QAbstractSpinBox(parent),
-        currentUnit(TitcoinUnits::TIT),
+        currentUnit(kriptoyngUnits::TIT),
         singleStep(100000) // satoshis
     {
         setAlignment(Qt::AlignRight);
@@ -48,7 +48,7 @@ public:
         CAmount val = parse(input, &valid);
         if(valid)
         {
-            input = TitcoinUnits::format(currentUnit, val, false, TitcoinUnits::separatorAlways);
+            input = kriptoyngUnits::format(currentUnit, val, false, kriptoyngUnits::separatorAlways);
             lineEdit()->setText(input);
         }
     }
@@ -60,7 +60,7 @@ public:
 
     void setValue(const CAmount& value)
     {
-        lineEdit()->setText(TitcoinUnits::format(currentUnit, value, false, TitcoinUnits::separatorAlways));
+        lineEdit()->setText(kriptoyngUnits::format(currentUnit, value, false, kriptoyngUnits::separatorAlways));
         Q_EMIT valueChanged();
     }
 
@@ -69,7 +69,7 @@ public:
         bool valid = false;
         CAmount val = value(&valid);
         val = val + steps * singleStep;
-        val = qMin(qMax(val, CAmount(0)), TitcoinUnits::maxMoney());
+        val = qMin(qMax(val, CAmount(0)), kriptoyngUnits::maxMoney());
         setValue(val);
     }
 
@@ -99,7 +99,7 @@ public:
 
             const QFontMetrics fm(fontMetrics());
             int h = lineEdit()->minimumSizeHint().height();
-            int w = fm.width(TitcoinUnits::format(TitcoinUnits::TIT, TitcoinUnits::maxMoney(), false, TitcoinUnits::separatorAlways));
+            int w = fm.width(kriptoyngUnits::format(kriptoyngUnits::TIT, kriptoyngUnits::maxMoney(), false, kriptoyngUnits::separatorAlways));
             w += 2; // cursor blinking space
 
             QStyleOptionSpinBox opt;
@@ -137,10 +137,10 @@ private:
     CAmount parse(const QString &text, bool *valid_out=0) const
     {
         CAmount val = 0;
-        bool valid = TitcoinUnits::parse(currentUnit, text, &val);
+        bool valid = kriptoyngUnits::parse(currentUnit, text, &val);
         if(valid)
         {
-            if(val < 0 || val > TitcoinUnits::maxMoney())
+            if(val < 0 || val > kriptoyngUnits::maxMoney())
                 valid = false;
         }
         if(valid_out)
@@ -178,7 +178,7 @@ protected:
         {
             if(val > 0)
                 rv |= StepDownEnabled;
-            if(val < TitcoinUnits::maxMoney())
+            if(val < kriptoyngUnits::maxMoney())
                 rv |= StepUpEnabled;
         }
         return rv;
@@ -188,9 +188,9 @@ Q_SIGNALS:
     void valueChanged();
 };
 
-#include <qt/titcoinamountfield.moc>
+#include <qt/kriptoyngamountfield.moc>
 
-TitcoinAmountField::TitcoinAmountField(QWidget *parent) :
+kriptoyngAmountField::kriptoyngAmountField(QWidget *parent) :
     QWidget(parent),
     amount(0)
 {
@@ -202,7 +202,7 @@ TitcoinAmountField::TitcoinAmountField(QWidget *parent) :
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
     unit = new QValueComboBox(this);
-    unit->setModel(new TitcoinUnits(this));
+    unit->setModel(new kriptoyngUnits(this));
     layout->addWidget(unit);
     layout->addStretch(1);
     layout->setContentsMargins(0,0,0,0);
@@ -220,19 +220,19 @@ TitcoinAmountField::TitcoinAmountField(QWidget *parent) :
     unitChanged(unit->currentIndex());
 }
 
-void TitcoinAmountField::clear()
+void kriptoyngAmountField::clear()
 {
     amount->clear();
     unit->setCurrentIndex(0);
 }
 
-void TitcoinAmountField::setEnabled(bool fEnabled)
+void kriptoyngAmountField::setEnabled(bool fEnabled)
 {
     amount->setEnabled(fEnabled);
     unit->setEnabled(fEnabled);
 }
 
-bool TitcoinAmountField::validate()
+bool kriptoyngAmountField::validate()
 {
     bool valid = false;
     value(&valid);
@@ -240,7 +240,7 @@ bool TitcoinAmountField::validate()
     return valid;
 }
 
-void TitcoinAmountField::setValid(bool valid)
+void kriptoyngAmountField::setValid(bool valid)
 {
     if (valid)
         amount->setStyleSheet("");
@@ -248,7 +248,7 @@ void TitcoinAmountField::setValid(bool valid)
         amount->setStyleSheet(STYLE_INVALID);
 }
 
-bool TitcoinAmountField::eventFilter(QObject *object, QEvent *event)
+bool kriptoyngAmountField::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::FocusIn)
     {
@@ -258,45 +258,45 @@ bool TitcoinAmountField::eventFilter(QObject *object, QEvent *event)
     return QWidget::eventFilter(object, event);
 }
 
-QWidget *TitcoinAmountField::setupTabChain(QWidget *prev)
+QWidget *kriptoyngAmountField::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, amount);
     QWidget::setTabOrder(amount, unit);
     return unit;
 }
 
-CAmount TitcoinAmountField::value(bool *valid_out) const
+CAmount kriptoyngAmountField::value(bool *valid_out) const
 {
     return amount->value(valid_out);
 }
 
-void TitcoinAmountField::setValue(const CAmount& value)
+void kriptoyngAmountField::setValue(const CAmount& value)
 {
     amount->setValue(value);
 }
 
-void TitcoinAmountField::setReadOnly(bool fReadOnly)
+void kriptoyngAmountField::setReadOnly(bool fReadOnly)
 {
     amount->setReadOnly(fReadOnly);
 }
 
-void TitcoinAmountField::unitChanged(int idx)
+void kriptoyngAmountField::unitChanged(int idx)
 {
     // Use description tooltip for current unit for the combobox
     unit->setToolTip(unit->itemData(idx, Qt::ToolTipRole).toString());
 
     // Determine new unit ID
-    int newUnit = unit->itemData(idx, TitcoinUnits::UnitRole).toInt();
+    int newUnit = unit->itemData(idx, kriptoyngUnits::UnitRole).toInt();
 
     amount->setDisplayUnit(newUnit);
 }
 
-void TitcoinAmountField::setDisplayUnit(int newUnit)
+void kriptoyngAmountField::setDisplayUnit(int newUnit)
 {
     unit->setValue(newUnit);
 }
 
-void TitcoinAmountField::setSingleStep(const CAmount& step)
+void kriptoyngAmountField::setSingleStep(const CAmount& step)
 {
     amount->setSingleStep(step);
 }

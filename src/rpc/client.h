@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_RPCCLIENT_H
-#define TITCOIN_RPCCLIENT_H
+#ifndef kriptoyng_RPCCLIENT_H
+#define kriptoyng_RPCCLIENT_H
 
 #include <univalue.h>
 
@@ -19,4 +19,4 @@ UniValue RPCConvertNamedValues(const std::string& strMethod, const std::vector<s
  */
 UniValue ParseNonRFCJSONValue(const std::string& strVal);
 
-#endif // TITCOIN_RPCCLIENT_H
+#endif // kriptoyng_RPCCLIENT_H

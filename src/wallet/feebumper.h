@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_WALLET_FEEBUMPER_H
-#define TITCOIN_WALLET_FEEBUMPER_H
+#ifndef kriptoyng_WALLET_FEEBUMPER_H
+#define kriptoyng_WALLET_FEEBUMPER_H
 
 #include <primitives/transaction.h>
 
@@ -55,4 +55,4 @@ Result CommitTransaction(CWallet* wallet,
 
 } // namespace feebumper
 
-#endif // TITCOIN_WALLET_FEEBUMPER_H
+#endif // kriptoyng_WALLET_FEEBUMPER_H

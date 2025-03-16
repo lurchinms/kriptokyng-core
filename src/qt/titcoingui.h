@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TITCOINGUI_H
-#define TITCOIN_QT_TITCOINGUI_H
+#ifndef kriptoyng_QT_kriptoyngGUI_H
+#define kriptoyng_QT_kriptoyngGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #include <amount.h>
@@ -38,10 +38,10 @@ class QProgressDialog;
 QT_END_NAMESPACE
 
 /**
-  Titcoin GUI main class. This class represents the main window of the Titcoin UI. It communicates with both the client and
+  kriptoyng GUI main class. This class represents the main window of the kriptoyng UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class TitcoinGUI : public QMainWindow
+class kriptoyngGUI : public QMainWindow
 {
     Q_OBJECT
 
@@ -49,8 +49,8 @@ public:
     static const QString DEFAULT_WALLET;
     static const std::string DEFAULT_UIPLATFORM;
 
-    explicit TitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
-    ~TitcoinGUI();
+    explicit kriptoyngGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
+    ~kriptoyngGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -59,7 +59,7 @@ public:
 
 #ifdef ENABLE_WALLET
     /** Set the wallet model.
-        The wallet model represents a titcoin wallet, and offers access to the list of transactions, address book and sending
+        The wallet model represents a kriptoyng wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
     bool addWallet(const QString& name, WalletModel *walletModel);
@@ -272,4 +272,4 @@ private Q_SLOTS:
     void onMenuSelection(QAction* action);
 };
 
-#endif // TITCOIN_QT_TITCOINGUI_H
+#endif // kriptoyng_QT_kriptoyngGUI_H

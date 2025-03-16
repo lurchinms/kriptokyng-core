@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_INIT_H
-#define TITCOIN_INIT_H
+#ifndef kriptoyng_INIT_H
+#define kriptoyng_INIT_H
 
 #include <string>
 
@@ -26,7 +26,7 @@ void InitLogging();
 //!Parameter interaction: change current parameters depending on various rules
 void InitParameterInteraction();
 
-/** Initialize titcoin core: Basic context setup.
+/** Initialize kriptoyng core: Basic context setup.
  *  @note This can be done before daemonization. Do not call Shutdown() if this function fails.
  *  @pre Parameters should be parsed and config file should be read.
  */
@@ -44,13 +44,13 @@ bool AppInitParameterInteraction();
  */
 bool AppInitSanityChecks();
 /**
- * Lock titcoin core data directory.
+ * Lock kriptoyng core data directory.
  * @note This should only be done after daemonization. Do not call Shutdown() if this function fails.
  * @pre Parameters should be parsed and config file should be read, AppInitSanityChecks should have been called.
  */
 bool AppInitLockDataDirectory();
 /**
- * Titcoin core main initialization.
+ * kriptoyng core main initialization.
  * @note This should only be done after daemonization. Call Shutdown() if this function fails.
  * @pre Parameters should be parsed and config file should be read, AppInitLockDataDirectory should have been called.
  */
@@ -58,8 +58,8 @@ bool AppInitMain();
 
 /** The help message mode determines what help message to show */
 enum HelpMessageMode {
-    HMM_TITCOIND,
-    HMM_TITCOIN_QT
+    HMM_kriptoyngD,
+    HMM_kriptoyng_QT
 };
 
 /** Help for options shared between UI and daemon (for -help) */
@@ -67,4 +67,4 @@ std::string HelpMessage(HelpMessageMode mode);
 /** Returns licensing information (for -version) */
 std::string LicenseInfo();
 
-#endif // TITCOIN_INIT_H
+#endif // kriptoyng_INIT_H

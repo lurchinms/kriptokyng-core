@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_ADDRMAN_H
-#define TITCOIN_ADDRMAN_H
+#ifndef kriptoyng_ADDRMAN_H
+#define kriptoyng_ADDRMAN_H
 
 #include <netaddress.h>
 #include <protocol.h>
@@ -601,4 +601,4 @@ public:
 
 };
 
-#endif // TITCOIN_ADDRMAN_H
+#endif // kriptoyng_ADDRMAN_H

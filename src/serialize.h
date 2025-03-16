@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_SERIALIZE_H
-#define TITCOIN_SERIALIZE_H
+#ifndef kriptoyng_SERIALIZE_H
+#define kriptoyng_SERIALIZE_H
 
 #include <compat/endian.h>
 
@@ -963,4 +963,4 @@ size_t GetSerializeSize(const S& s, const T& t)
     return (CSizeComputer(s.GetType(), s.GetVersion()) << t).size();
 }
 
-#endif // TITCOIN_SERIALIZE_H
+#endif // kriptoyng_SERIALIZE_H

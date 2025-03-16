@@ -1,13 +1,13 @@
 *.tar.gz
 
 *.exe
-src/titcoin
-src/titcoind
-src/titcoin-cli
-src/titcoin-tx
-src/test/test_titcoin
-src/test/test_titcoin_fuzzy
-src/qt/test/test_titcoin-qt
+src/kriptoyng
+src/kriptoyngd
+src/kriptoyng-cli
+src/kriptoyng-tx
+src/test/test_kriptoyng
+src/test/test_kriptoyng_fuzzy
+src/qt/test/test_kriptoyng-qt
 
 # autoreconf
 Makefile.in
@@ -30,8 +30,8 @@ config.log
 config.status
 configure
 libtool
-src/config/titcoin-config.h
-src/config/titcoin-config.h.in
+src/config/kriptoyng-config.h
+src/config/kriptoyng-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -44,11 +44,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/titcoin-qt.config
-src/qt/titcoin-qt.creator
-src/qt/titcoin-qt.creator.user
-src/qt/titcoin-qt.files
-src/qt/titcoin-qt.includes
+src/qt/kriptoyng-qt.config
+src/qt/kriptoyng-qt.creator
+src/qt/kriptoyng-qt.creator.user
+src/qt/kriptoyng-qt.files
+src/qt/kriptoyng-qt.includes
 
 .deps
 .dirstamp
@@ -80,13 +80,13 @@ src/qt/titcoin-qt.includes
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-titcoin-qt
-Titcoin-Qt.app
+kriptoyng-qt
+kriptoyng-Qt.app
 background.tiff*
 
 # Unit-tests
 Makefile.test
-titcoin-qt_test
+kriptoyng-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -99,7 +99,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_titcoin.coverage/
+test_kriptoyng.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -114,5 +114,5 @@ test/cache/*
 
 /doc/doxygen/
 
-libtitcoinconsensus.pc
+libkriptoyngconsensus.pc
 contrib/devtools/split-debug.sh

@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_NETADDRESS_H
-#define TITCOIN_NETADDRESS_H
+#ifndef kriptoyng_NETADDRESS_H
+#define kriptoyng_NETADDRESS_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #include <compat.h>
@@ -174,4 +174,4 @@ class CService : public CNetAddr
         }
 };
 
-#endif // TITCOIN_NETADDRESS_H
+#endif // kriptoyng_NETADDRESS_H

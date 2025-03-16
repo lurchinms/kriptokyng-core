@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_TEST_TEST_TITCOIN_H
-#define TITCOIN_TEST_TEST_TITCOIN_H
+#ifndef kriptoyng_TEST_TEST_kriptoyng_H
+#define kriptoyng_TEST_TEST_kriptoyng_H
 
 #include <chainparamsbase.h>
 #include <fs.h>

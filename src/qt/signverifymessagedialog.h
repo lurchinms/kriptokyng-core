@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_SIGNVERIFYMESSAGEDIALOG_H
-#define TITCOIN_QT_SIGNVERIFYMESSAGEDIALOG_H
+#ifndef kriptoyng_QT_SIGNVERIFYMESSAGEDIALOG_H
+#define kriptoyng_QT_SIGNVERIFYMESSAGEDIALOG_H
 
 #include <QDialog>
 
@@ -50,4 +50,4 @@ private Q_SLOTS:
     void on_clearButton_VM_clicked();
 };
 
-#endif // TITCOIN_QT_SIGNVERIFYMESSAGEDIALOG_H
+#endif // kriptoyng_QT_SIGNVERIFYMESSAGEDIALOG_H

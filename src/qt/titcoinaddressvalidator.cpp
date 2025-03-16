@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <qt/titcoinaddressvalidator.h>
+#include <qt/kriptoyngaddressvalidator.h>
 
 #include <base58.h>
 
@@ -15,12 +15,12 @@
   - All lower-case letters except for 'l'
 */
 
-TitcoinAddressEntryValidator::TitcoinAddressEntryValidator(QObject *parent) :
+kriptoyngAddressEntryValidator::kriptoyngAddressEntryValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State TitcoinAddressEntryValidator::validate(QString &input, int &pos) const
+QValidator::State kriptoyngAddressEntryValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
 
@@ -80,15 +80,15 @@ QValidator::State TitcoinAddressEntryValidator::validate(QString &input, int &po
     return state;
 }
 
-TitcoinAddressCheckValidator::TitcoinAddressCheckValidator(QObject *parent) :
+kriptoyngAddressCheckValidator::kriptoyngAddressCheckValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State TitcoinAddressCheckValidator::validate(QString &input, int &pos) const
+QValidator::State kriptoyngAddressCheckValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
-    // Validate the passed Titcoin address
+    // Validate the passed kriptoyng address
     if (IsValidDestinationString(input.toStdString())) {
         return QValidator::Acceptable;
     }

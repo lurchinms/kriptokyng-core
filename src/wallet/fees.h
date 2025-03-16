@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_WALLET_FEES_H
-#define TITCOIN_WALLET_FEES_H
+#ifndef kriptoyng_WALLET_FEES_H
+#define kriptoyng_WALLET_FEES_H
 
 #include <amount.h>
 
@@ -31,4 +31,4 @@ CAmount GetMinimumFee(unsigned int nTxBytes, const CCoinControl& coin_control, c
  */
 CFeeRate GetDiscardRate(const CBlockPolicyEstimator& estimator);
 
-#endif // TITCOIN_WALLET_FEES_H
+#endif // kriptoyng_WALLET_FEES_H

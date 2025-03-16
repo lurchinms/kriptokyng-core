@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TITCOINAMOUNTFIELD_H
-#define TITCOIN_QT_TITCOINAMOUNTFIELD_H
+#ifndef kriptoyng_QT_kriptoyngAMOUNTFIELD_H
+#define kriptoyng_QT_kriptoyngAMOUNTFIELD_H
 
 #include <amount.h>
 
@@ -15,9 +15,9 @@ QT_BEGIN_NAMESPACE
 class QValueComboBox;
 QT_END_NAMESPACE
 
-/** Widget for entering titcoin amounts.
+/** Widget for entering kriptoyng amounts.
   */
-class TitcoinAmountField: public QWidget
+class kriptoyngAmountField: public QWidget
 {
     Q_OBJECT
 
@@ -26,7 +26,7 @@ class TitcoinAmountField: public QWidget
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
 
 public:
-    explicit TitcoinAmountField(QWidget *parent = 0);
+    explicit kriptoyngAmountField(QWidget *parent = 0);
 
     CAmount value(bool *value=0) const;
     void setValue(const CAmount& value);
@@ -72,4 +72,4 @@ private Q_SLOTS:
 
 };
 
-#endif // TITCOIN_QT_TITCOINAMOUNTFIELD_H
+#endif // kriptoyng_QT_kriptoyngAMOUNTFIELD_H

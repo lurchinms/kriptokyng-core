@@ -48,7 +48,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Titcoin cannot be compiled without assertions."
+# error "kriptoyng cannot be compiled without assertions."
 #endif
 
 #define MICRO 0.000001
@@ -1683,7 +1683,7 @@ static bool WriteTxIndexDataForBlock(const CBlock& block, CValidationState& stat
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("titcoin-scriptch");
+    RenameThread("kriptoyng-scriptch");
     scriptcheckqueue.Thread();
 }
 

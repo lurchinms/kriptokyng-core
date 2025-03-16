@@ -3,13 +3,13 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #include <qt/optionsdialog.h>
 #include <qt/forms/ui_optionsdialog.h>
 
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngunits.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
 
@@ -73,10 +73,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     /* Display elements init */
     QDir translations(":translations");
 
-    ui->titcoinAtStartup->setToolTip(ui->titcoinAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
-    ui->titcoinAtStartup->setText(ui->titcoinAtStartup->text().arg(tr(PACKAGE_NAME)));
+    ui->kriptoyngAtStartup->setToolTip(ui->kriptoyngAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->kriptoyngAtStartup->setText(ui->kriptoyngAtStartup->text().arg(tr(PACKAGE_NAME)));
 
-    ui->openTitcoinConfButton->setToolTip(ui->openTitcoinConfButton->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->openkriptoyngConfButton->setToolTip(ui->openkriptoyngConfButton->toolTip().arg(tr(PACKAGE_NAME)));
 
     ui->lang->setToolTip(ui->lang->toolTip().arg(tr(PACKAGE_NAME)));
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
@@ -110,7 +110,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     ui->thirdPartyTxUrls->setPlaceholderText("https://example.com/tx/%s");
 #endif
 
-    ui->unit->setModel(new TitcoinUnits(this));
+    ui->unit->setModel(new kriptoyngUnits(this));
 
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);
@@ -172,7 +172,7 @@ void OptionsDialog::setModel(OptionsModel *_model)
 void OptionsDialog::setMapper()
 {
     /* Main */
-    mapper->addMapping(ui->titcoinAtStartup, OptionsModel::StartAtStartup);
+    mapper->addMapping(ui->kriptoyngAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
 
@@ -228,7 +228,7 @@ void OptionsDialog::on_resetButton_clicked()
     }
 }
 
-void OptionsDialog::on_openTitcoinConfButton_clicked()
+void OptionsDialog::on_openkriptoyngConfButton_clicked()
 {
     /* explain the purpose of the config file */
     QMessageBox::information(this, tr("Configuration options"),
@@ -236,7 +236,7 @@ void OptionsDialog::on_openTitcoinConfButton_clicked()
            "Additionally, any command-line options will override this configuration file."));
 
     /* show an error if there was some problem opening the file */
-    if (!GUIUtil::openTitcoinConf())
+    if (!GUIUtil::openkriptoyngConf())
         QMessageBox::critical(this, tr("Error"), tr("The configuration file could not be opened."));
 }
 

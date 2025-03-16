@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_VALIDATIONINTERFACE_H
-#define TITCOIN_VALIDATIONINTERFACE_H
+#ifndef kriptoyng_VALIDATIONINTERFACE_H
+#define kriptoyng_VALIDATIONINTERFACE_H
 
 #include <primitives/transaction.h> // CTransaction(Ref)
 
@@ -158,4 +158,4 @@ public:
 
 CMainSignals& GetMainSignals();
 
-#endif // TITCOIN_VALIDATIONINTERFACE_H
+#endif // kriptoyng_VALIDATIONINTERFACE_H

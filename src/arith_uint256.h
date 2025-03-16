@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_ARITH_UINT256_H
-#define TITCOIN_ARITH_UINT256_H
+#ifndef kriptoyng_ARITH_UINT256_H
+#define kriptoyng_ARITH_UINT256_H
 
 #include <assert.h>
 #include <cstring>
@@ -278,7 +278,7 @@ public:
      * Thus 0x1234560000 is compact (0x05123456)
      * and  0xc0de000000 is compact (0x0600c0de)
      *
-     * Titcoin only uses this "compact" format for encoding difficulty
+     * kriptoyng only uses this "compact" format for encoding difficulty
      * targets, which are unsigned 256bit quantities.  Thus, all the
      * complexities of the sign bit and using base 256 are probably an
      * implementation accident.
@@ -293,4 +293,4 @@ public:
 uint256 ArithToUint256(const arith_uint256 &);
 arith_uint256 UintToArith256(const uint256 &);
 
-#endif // TITCOIN_ARITH_UINT256_H
+#endif // kriptoyng_ARITH_UINT256_H

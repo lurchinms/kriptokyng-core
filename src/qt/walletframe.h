@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_WALLETFRAME_H
-#define TITCOIN_QT_WALLETFRAME_H
+#ifndef kriptoyng_QT_WALLETFRAME_H
+#define kriptoyng_QT_WALLETFRAME_H
 
 #include <QFrame>
 #include <QMap>
 
-class TitcoinGUI;
+class kriptoyngGUI;
 class ClientModel;
 class PlatformStyle;
 class SendCoinsRecipient;
@@ -21,9 +21,9 @@ QT_END_NAMESPACE
 
 /**
  * A container for embedding all wallet-related
- * controls into TitcoinGUI. The purpose of this class is to allow future
+ * controls into kriptoyngGUI. The purpose of this class is to allow future
  * refinements of the wallet controls with minimal need for further
- * modifications to TitcoinGUI, thus greatly simplifying merges while
+ * modifications to kriptoyngGUI, thus greatly simplifying merges while
  * reducing the risk of breaking top-level stuff.
  */
 class WalletFrame : public QFrame
@@ -31,7 +31,7 @@ class WalletFrame : public QFrame
     Q_OBJECT
 
 public:
-    explicit WalletFrame(const PlatformStyle *platformStyle, TitcoinGUI *_gui = 0);
+    explicit WalletFrame(const PlatformStyle *platformStyle, kriptoyngGUI *_gui = 0);
     ~WalletFrame();
 
     void setClientModel(ClientModel *clientModel);
@@ -51,7 +51,7 @@ Q_SIGNALS:
 
 private:
     QStackedWidget *walletStack;
-    TitcoinGUI *gui;
+    kriptoyngGUI *gui;
     ClientModel *clientModel;
     QMap<QString, WalletView*> mapWalletViews;
 
@@ -93,4 +93,4 @@ public Q_SLOTS:
     void outOfSyncWarningClicked();
 };
 
-#endif // TITCOIN_QT_WALLETFRAME_H
+#endif // kriptoyng_QT_WALLETFRAME_H

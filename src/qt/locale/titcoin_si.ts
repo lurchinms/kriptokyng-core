@@ -44,7 +44,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Warning</source>
         <translation>අවවාදය</translation>
@@ -306,7 +306,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Information</source>
         <translation>තොරතුර</translation>

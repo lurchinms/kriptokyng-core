@@ -10,7 +10,7 @@
 #include <miner.h>
 #include <pow.h>
 #include <random.h>
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 #include <validation.h>
 #include <validationinterface.h>
 

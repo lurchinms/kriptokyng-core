@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_UINT256_H
-#define TITCOIN_UINT256_H
+#ifndef kriptoyng_UINT256_H
+#define kriptoyng_UINT256_H
 
 #include <assert.h>
 #include <cstring>
@@ -156,4 +156,4 @@ inline uint256 uint256S(const std::string& str)
     return rv;
 }
 
-#endif // TITCOIN_UINT256_H
+#endif // kriptoyng_UINT256_H

@@ -9,7 +9,7 @@
 
 #include <qt/addressbookpage.h>
 #include <qt/addresstablemodel.h>
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngunits.h>
 #include <qt/optionsmodel.h>
 #include <qt/platformstyle.h>
 #include <qt/receiverequestdialog.h>
@@ -98,7 +98,7 @@ void ReceiveCoinsDialog::setModel(WalletModel *_model)
             ui->useBech32->setCheckState(Qt::Checked);
         } else {
             ui->useBech32->setCheckState(Qt::Unchecked);
-            ui->useBech32->setEnabled(false); // Titcoin does not support SegWit / Bech32 yet
+            ui->useBech32->setEnabled(false); // kriptoyng does not support SegWit / Bech32 yet
         }
     }
 }
@@ -270,7 +270,7 @@ void ReceiveCoinsDialog::copyURI()
     }
 
     const RecentRequestsTableModel * const submodel = model->getRecentRequestsTableModel();
-    const QString uri = GUIUtil::formatTitcoinURI(submodel->entry(sel.row()).recipient);
+    const QString uri = GUIUtil::formatkriptoyngURI(submodel->entry(sel.row()).recipient);
     GUIUtil::setClipboard(uri);
 }
 

@@ -1,15 +1,15 @@
 Build instructions
 ====================
 
-These instructions are used to compile all Titcoin releases. The instructions are meant to be used on Debian 9 (Stretch). If you are using a different operating system, the necessary steps might be different. The recommended way to compile Titcoin is to set up Debian 9 (e.g. in a VM), make sure it has enough RAM and disk space and then follow these instructions.
+These instructions are used to compile all kriptoyng releases. The instructions are meant to be used on Debian 9 (Stretch). If you are using a different operating system, the necessary steps might be different. The recommended way to compile kriptoyng is to set up Debian 9 (e.g. in a VM), make sure it has enough RAM and disk space and then follow these instructions.
 
 ```
 # Install necessary tools
 sudo apt-get install git build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 curl wget
 
-# Download + prepare Titcoin source code
-git clone https://github.com/titcoin/titcoin
-cd titcoin
+# Download + prepare kriptoyng source code
+git clone https://github.com/kriptoyng/kriptoyng
+cd kriptoyng
 ./autogen.sh
 
 # Build for Linux x64
@@ -24,11 +24,11 @@ make
 #   make install DESTDIR=$PWD/linux-release
 # We are just packaging the binaries here:
 mkdir linux-release
-mv src/qt/titcoin-qt linux-release
-mv src/titcoind linux-release
-mv src/titcoin-cli linux-release
+mv src/qt/kriptoyng-qt linux-release
+mv src/kriptoyngd linux-release
+mv src/kriptoyng-cli linux-release
 cd linux-release
-tar -czvf ../titcoin-release.tar.gz *
+tar -czvf ../kriptoyng-release.tar.gz *
 cd ..
 rm -r linux-release
 
@@ -42,7 +42,7 @@ CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --pref
 make clean
 make
 make deploy
-# if it says "error: could not build titcoin-0.16.3-win64-setup.exe", use:
+# if it says "error: could not build kriptoyng-0.16.3-win64-setup.exe", use:
 makensis share/setup.nsi
 
 # Build for Mac OS X 11

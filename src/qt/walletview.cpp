@@ -6,7 +6,7 @@
 
 #include <qt/addressbookpage.h>
 #include <qt/askpassphrasedialog.h>
-#include <qt/titcoingui.h>
+#include <qt/kriptoynggui.h>
 #include <qt/clientmodel.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
@@ -84,7 +84,7 @@ WalletView::~WalletView()
 {
 }
 
-void WalletView::setTitcoinGUI(TitcoinGUI *gui)
+void WalletView::setkriptoyngGUI(kriptoyngGUI *gui)
 {
     if (gui)
     {

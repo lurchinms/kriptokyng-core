@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_CHECKPOINTS_H
-#define TITCOIN_CHECKPOINTS_H
+#ifndef kriptoyng_CHECKPOINTS_H
+#define kriptoyng_CHECKPOINTS_H
 
 #include <uint256.h>
 
@@ -24,4 +24,4 @@ CBlockIndex* GetLastCheckpoint(const CCheckpointData& data);
 
 } //namespace Checkpoints
 
-#endif // TITCOIN_CHECKPOINTS_H
+#endif // kriptoyng_CHECKPOINTS_H

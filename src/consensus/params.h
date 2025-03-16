@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_CONSENSUS_PARAMS_H
-#define TITCOIN_CONSENSUS_PARAMS_H
+#ifndef kriptoyng_CONSENSUS_PARAMS_H
+#define kriptoyng_CONSENSUS_PARAMS_H
 
 #include <uint256.h>
 #include <limits>
@@ -49,7 +49,7 @@ struct BIP9Deployment {
 struct Params {
     uint256 hashGenesisBlock;
     int nSubsidyHalvingInterval;
-    /** Block time at which Titcoin's own difficulty rules become active */
+    /** Block time at which kriptoyng's own difficulty rules become active */
     uint32_t DifficultyForkTime;
     /** Block height at which BIP16 becomes active */
     int BIP16Height;
@@ -81,4 +81,4 @@ struct Params {
 };
 } // namespace Consensus
 
-#endif // TITCOIN_CONSENSUS_PARAMS_H
+#endif // kriptoyng_CONSENSUS_PARAMS_H

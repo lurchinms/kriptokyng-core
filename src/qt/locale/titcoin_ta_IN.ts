@@ -44,7 +44,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Error</source>
         <translation>பிழை</translation>
@@ -186,7 +186,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Insufficient funds</source>
         <translation>போதுமான பணம் இல்லை</translation>

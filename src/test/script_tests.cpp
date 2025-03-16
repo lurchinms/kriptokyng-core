@@ -12,11 +12,11 @@
 #include <script/sign.h>
 #include <util.h>
 #include <utilstrencodings.h>
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 #include <rpc/server.h>
 
 #if defined(HAVE_CONSENSUS_LIB)
-#include <script/titcoinconsensus.h>
+#include <script/kriptoyngconsensus.h>
 #endif
 
 #include <fstream>
@@ -182,13 +182,13 @@ void DoTest(const CScript& scriptPubKey, const CScript& scriptSig, const CScript
 #if defined(HAVE_CONSENSUS_LIB)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << tx2;
-    int libconsensus_flags = flags & titcoinconsensus_SCRIPT_FLAGS_VERIFY_ALL;
+    int libconsensus_flags = flags & kriptoyngconsensus_SCRIPT_FLAGS_VERIFY_ALL;
     if (libconsensus_flags == flags) {
-        if (flags & titcoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS) {
-            BOOST_CHECK_MESSAGE(titcoinconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), txCredit.vout[0].nValue, (const unsigned char*)&stream[0], stream.size(), 0, libconsensus_flags, nullptr) == expect, message);
+        if (flags & kriptoyngconsensus_SCRIPT_FLAGS_VERIFY_WITNESS) {
+            BOOST_CHECK_MESSAGE(kriptoyngconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), txCredit.vout[0].nValue, (const unsigned char*)&stream[0], stream.size(), 0, libconsensus_flags, nullptr) == expect, message);
         } else {
-            BOOST_CHECK_MESSAGE(titcoinconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), 0, (const unsigned char*)&stream[0], stream.size(), 0, libconsensus_flags, nullptr) == expect, message);
-            BOOST_CHECK_MESSAGE(titcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), 0, libconsensus_flags, nullptr) == expect,message);
+            BOOST_CHECK_MESSAGE(kriptoyngconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), 0, (const unsigned char*)&stream[0], stream.size(), 0, libconsensus_flags, nullptr) == expect, message);
+            BOOST_CHECK_MESSAGE(kriptoyngconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), 0, libconsensus_flags, nullptr) == expect,message);
         }
     }
 #endif
@@ -1484,8 +1484,8 @@ BOOST_AUTO_TEST_CASE(script_can_append_self)
 
 #if defined(HAVE_CONSENSUS_LIB)
 
-/* Test simple (successful) usage of titcoinconsensus_verify_script */
-BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_returns_true)
+/* Test simple (successful) usage of kriptoyngconsensus_verify_script */
+BOOST_AUTO_TEST_CASE(kriptoyngconsensus_verify_script_returns_true)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1501,14 +1501,14 @@ BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_returns_true)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    titcoinconsensus_error err;
-    int result = titcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kriptoyngconsensus_error err;
+    int result = kriptoyngconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 1);
-    BOOST_CHECK_EQUAL(err, titcoinconsensus_ERR_OK);
+    BOOST_CHECK_EQUAL(err, kriptoyngconsensus_ERR_OK);
 }
 
-/* Test titcoinconsensus_verify_script returns invalid tx index err*/
-BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_tx_index_err)
+/* Test kriptoyngconsensus_verify_script returns invalid tx index err*/
+BOOST_AUTO_TEST_CASE(kriptoyngconsensus_verify_script_tx_index_err)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 3;
@@ -1524,14 +1524,14 @@ BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_tx_index_err)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    titcoinconsensus_error err;
-    int result = titcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kriptoyngconsensus_error err;
+    int result = kriptoyngconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, titcoinconsensus_ERR_TX_INDEX);
+    BOOST_CHECK_EQUAL(err, kriptoyngconsensus_ERR_TX_INDEX);
 }
 
-/* Test titcoinconsensus_verify_script returns tx size mismatch err*/
-BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_tx_size)
+/* Test kriptoyngconsensus_verify_script returns tx size mismatch err*/
+BOOST_AUTO_TEST_CASE(kriptoyngconsensus_verify_script_tx_size)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1547,14 +1547,14 @@ BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_tx_size)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    titcoinconsensus_error err;
-    int result = titcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size() * 2, nIn, libconsensus_flags, &err);
+    kriptoyngconsensus_error err;
+    int result = kriptoyngconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size() * 2, nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, titcoinconsensus_ERR_TX_SIZE_MISMATCH);
+    BOOST_CHECK_EQUAL(err, kriptoyngconsensus_ERR_TX_SIZE_MISMATCH);
 }
 
-/* Test titcoinconsensus_verify_script returns invalid tx serialization error */
-BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_tx_serialization)
+/* Test kriptoyngconsensus_verify_script returns invalid tx serialization error */
+BOOST_AUTO_TEST_CASE(kriptoyngconsensus_verify_script_tx_serialization)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1570,16 +1570,16 @@ BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_tx_serialization)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << 0xffffffff;
 
-    titcoinconsensus_error err;
-    int result = titcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kriptoyngconsensus_error err;
+    int result = kriptoyngconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, titcoinconsensus_ERR_TX_DESERIALIZE);
+    BOOST_CHECK_EQUAL(err, kriptoyngconsensus_ERR_TX_DESERIALIZE);
 }
 
-/* Test titcoinconsensus_verify_script returns amount required error */
-BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_amount_required_err)
+/* Test kriptoyngconsensus_verify_script returns amount required error */
+BOOST_AUTO_TEST_CASE(kriptoyngconsensus_verify_script_amount_required_err)
 {
-    unsigned int libconsensus_flags = titcoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS;
+    unsigned int libconsensus_flags = kriptoyngconsensus_SCRIPT_FLAGS_VERIFY_WITNESS;
     int nIn = 0;
 
     CScript scriptPubKey;
@@ -1593,14 +1593,14 @@ BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_amount_required_err)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    titcoinconsensus_error err;
-    int result = titcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kriptoyngconsensus_error err;
+    int result = kriptoyngconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, titcoinconsensus_ERR_AMOUNT_REQUIRED);
+    BOOST_CHECK_EQUAL(err, kriptoyngconsensus_ERR_AMOUNT_REQUIRED);
 }
 
-/* Test titcoinconsensus_verify_script returns invalid flags err */
-BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_invalid_flags)
+/* Test kriptoyngconsensus_verify_script returns invalid flags err */
+BOOST_AUTO_TEST_CASE(kriptoyngconsensus_verify_script_invalid_flags)
 {
     unsigned int libconsensus_flags = 1 << 3;
     int nIn = 0;
@@ -1616,10 +1616,10 @@ BOOST_AUTO_TEST_CASE(titcoinconsensus_verify_script_invalid_flags)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    titcoinconsensus_error err;
-    int result = titcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kriptoyngconsensus_error err;
+    int result = kriptoyngconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, titcoinconsensus_ERR_INVALID_FLAGS);
+    BOOST_CHECK_EQUAL(err, kriptoyngconsensus_ERR_INVALID_FLAGS);
 }
 
 #endif

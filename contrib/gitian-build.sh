@@ -30,7 +30,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the titcoin, gitian-builder, gitian.sigs, and titcoin-detached-sigs.
+Run this script from the directory containing the kriptoyng, gitian-builder, gitian.sigs, and kriptoyng-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -244,7 +244,7 @@ then
 fi
 
 # Set up build
-pushd ./titcoin
+pushd ./kriptoyng
 git fetch
 git checkout ${COMMIT}
 popd
@@ -253,7 +253,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./titcoin-binaries/${VERSION}
+	mkdir -p ./kriptoyng-binaries/${VERSION}
 	
 	# Build Dependencies
 	echo ""
@@ -263,7 +263,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../titcoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../kriptoyng/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -271,9 +271,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit titcoin=${COMMIT} --url titcoin=${url} ../titcoin/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../titcoin/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/titcoin-*.tar.gz build/out/src/titcoin-*.tar.gz ../titcoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit kriptoyng=${COMMIT} --url kriptoyng=${url} ../kriptoyng/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../kriptoyng/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/kriptoyng-*.tar.gz build/out/src/kriptoyng-*.tar.gz ../kriptoyng-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -281,10 +281,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit titcoin=${COMMIT} --url titcoin=${url} ../titcoin/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../titcoin/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/titcoin-*-win-unsigned.tar.gz inputs/titcoin-win-unsigned.tar.gz
-	    mv build/out/titcoin-*.zip build/out/titcoin-*.exe ../titcoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit kriptoyng=${COMMIT} --url kriptoyng=${url} ../kriptoyng/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../kriptoyng/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/kriptoyng-*-win-unsigned.tar.gz inputs/kriptoyng-win-unsigned.tar.gz
+	    mv build/out/kriptoyng-*.zip build/out/kriptoyng-*.exe ../kriptoyng-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -292,10 +292,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit titcoin=${COMMIT} --url titcoin=${url} ../titcoin/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../titcoin/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/titcoin-*-osx-unsigned.tar.gz inputs/titcoin-osx-unsigned.tar.gz
-	    mv build/out/titcoin-*.tar.gz build/out/titcoin-*.dmg ../titcoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit kriptoyng=${COMMIT} --url kriptoyng=${url} ../kriptoyng/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../kriptoyng/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/kriptoyng-*-osx-unsigned.tar.gz inputs/kriptoyng-osx-unsigned.tar.gz
+	    mv build/out/kriptoyng-*.tar.gz build/out/kriptoyng-*.dmg ../kriptoyng-binaries/${VERSION}
 	fi
 	popd
 
@@ -322,27 +322,27 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../titcoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../kriptoyng/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../titcoin/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../kriptoyng/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX	
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""	
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../titcoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../kriptoyng/contrib/gitian-descriptors/gitian-osx.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../titcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../kriptoyng/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../titcoin/contrib/gitian-descriptors/gitian-osx-signer.yml	
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../kriptoyng/contrib/gitian-descriptors/gitian-osx-signer.yml	
 	popd
 fi
 
@@ -357,10 +357,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../titcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../titcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/titcoin-*win64-setup.exe ../titcoin-binaries/${VERSION}
-	    mv build/out/titcoin-*win32-setup.exe ../titcoin-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../kriptoyng/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../kriptoyng/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/kriptoyng-*win64-setup.exe ../kriptoyng-binaries/${VERSION}
+	    mv build/out/kriptoyng-*win32-setup.exe ../kriptoyng-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -368,9 +368,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../titcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../titcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/titcoin-osx-signed.dmg ../titcoin-binaries/${VERSION}/titcoin-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../kriptoyng/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../kriptoyng/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/kriptoyng-osx-signed.dmg ../kriptoyng-binaries/${VERSION}/kriptoyng-${VERSION}-osx.dmg
 	fi
 	popd
 

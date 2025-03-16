@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2017 The Bitcoin Core developers
-// Copyright (c) 2014-2021 The Titcoin developers
+// Copyright (c) 2014-2021 The kriptoyng developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -76,7 +76,7 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
 
 unsigned int GetNextWorkRequiredV2(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
-    // Transferred from https://github.com/titcoin/titcoin-original/blob/master/src/main.cpp#L1177
+    // Transferred from https://github.com/kriptoyng/kriptoyng-original/blob/master/src/main.cpp#L1177
     // Modified Digishield. Digishield retargets every block, reducing the apparent difference between the actual
     // block interval and target block interval by a factor of 8. It allows a 33% change in difficulty.
 
@@ -86,7 +86,7 @@ unsigned int GetNextWorkRequiredV2(const CBlockIndex* pindexLast, const CBlockHe
     if (pindexLast->nHeight == 0) // Genesis block
         return nProofOfWorkLimit;
 
-    // Titcoin: Digishield implementation means difficulty changes every block
+    // kriptoyng: Digishield implementation means difficulty changes every block
 
     // Go back by one block
     const CBlockIndex* pindexFirst = pindexLast->pprev;
@@ -153,7 +153,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
         return false;
 
     // Check proof of work matches claimed amount
-    // Disable check for the genesis block because the Titcoin genesis block does not meet the minimum diff
+    // Disable check for the genesis block because the kriptoyng genesis block does not meet the minimum diff
     if (hash != params.hashGenesisBlock && UintToArith256(hash) > bnTarget)
         return false;
 

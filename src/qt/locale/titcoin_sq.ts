@@ -54,12 +54,12 @@
         <translation>Duke marr adresen</translation>
     </message>
     <message>
-        <source>These are your Titcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Këto janë Titcoin adresat e juaja për të dërguar pagesa. Gjithmon kontrolloni shumën dhe adresën pranuese para se të dërgoni monedha.</translation>
+        <source>These are your kriptoyng addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Këto janë kriptoyng adresat e juaja për të dërguar pagesa. Gjithmon kontrolloni shumën dhe adresën pranuese para se të dërgoni monedha.</translation>
     </message>
     <message>
-        <source>These are your Titcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Këto janë Titcoin adresat e juaja për të pranuar pagesa. Rekomandohet që gjithmon të përdorni një adresë të re për çdo transaksion.</translation>
+        <source>These are your kriptoyng addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Këto janë kriptoyng adresat e juaja për të pranuar pagesa. Rekomandohet që gjithmon të përdorni një adresë të re për çdo transaksion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -192,7 +192,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Duke u sinkronizuar me rrjetin...</translation>
@@ -230,8 +230,8 @@
         <translation>Ndrysho frazkalimin e përdorur per enkriptimin e portofolit</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -401,8 +401,8 @@
         <translation>Miresevini</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Error</source>
@@ -802,14 +802,14 @@
     </message>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Options:</source>
         <translation>Opsionet:</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Berthama Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>Berthama kriptoyng</translation>
     </message>
     <message>
         <source>Information</source>

@@ -13,10 +13,10 @@ RPCs tested are:
     - move (with account arguments)
 """
 
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import assert_equal
 
-class WalletAccountsTest(TitcoinTestFramework):
+class WalletAccountsTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -34,7 +34,7 @@ class WalletAccountsTest(TitcoinTestFramework):
         assert_equal(node.getbalance(), 138)
 
         # there should be 2 address groups
-        # each with 1 address with a balance of 69 Titcoins
+        # each with 1 address with a balance of 69 kriptoyngs
         address_groups = node.listaddressgroupings()
         assert_equal(len(address_groups), 2)
         # the addresses aren't linked now, but will be after we send to the

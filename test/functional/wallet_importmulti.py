@@ -3,10 +3,10 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the importmulti RPC."""
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import *
 
-class ImportMultiTest (TitcoinTestFramework):
+class ImportMultiTest (kriptoyngTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.extra_args = [["-addresstype=legacy"], ["-addresstype=legacy"]]
@@ -37,7 +37,7 @@ class ImportMultiTest (TitcoinTestFramework):
 
         # RPC importmulti -----------------------------------------------
 
-        # Titcoin Address
+        # kriptoyng Address
         self.log.info("Should import an address")
         address = self.nodes[0].validateaddress(self.nodes[0].getnewaddress())
         result = self.nodes[1].importmulti([{

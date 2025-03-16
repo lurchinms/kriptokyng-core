@@ -1,33 +1,33 @@
-# /etc/conf.d/titcoind: config file for /etc/init.d/titcoind
+# /etc/conf.d/kriptoyngd: config file for /etc/init.d/kriptoyngd
 
 # Config file location
-#TITCOIND_CONFIGFILE="/etc/titcoin/titcoin.conf"
+#kriptoyngD_CONFIGFILE="/etc/kriptoyng/kriptoyng.conf"
 
-# What directory to write pidfile to?  (created and owned by $TITCOIND_USER)
-#TITCOIND_PIDDIR="/var/run/titcoind"
+# What directory to write pidfile to?  (created and owned by $kriptoyngD_USER)
+#kriptoyngD_PIDDIR="/var/run/kriptoyngd"
 
 # What filename to give the pidfile
-#TITCOIND_PIDFILE="${TITCOIND_PIDDIR}/titcoind.pid"
+#kriptoyngD_PIDFILE="${kriptoyngD_PIDDIR}/kriptoyngd.pid"
 
-# Where to write titcoind data (be mindful that the blockchain is large)
-#TITCOIND_DATADIR="/var/lib/titcoind"
+# Where to write kriptoyngd data (be mindful that the blockchain is large)
+#kriptoyngD_DATADIR="/var/lib/kriptoyngd"
 
-# User and group to own titcoind process
-#TITCOIND_USER="titcoin"
-#TITCOIND_GROUP="titcoin"
+# User and group to own kriptoyngd process
+#kriptoyngD_USER="kriptoyng"
+#kriptoyngD_GROUP="kriptoyng"
 
-# Path to titcoind executable
-#TITCOIND_BIN="/usr/bin/titcoind"
+# Path to kriptoyngd executable
+#kriptoyngD_BIN="/usr/bin/kriptoyngd"
 
-# Nice value to run titcoind under
-#TITCOIND_NICE=0
+# Nice value to run kriptoyngd under
+#kriptoyngD_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-#TITCOIND_OPTS=""
+#kriptoyngD_OPTS=""
 
-# The timeout in seconds OpenRC will wait for titcoind to terminate
+# The timeout in seconds OpenRC will wait for kriptoyngd to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-TITCOIND_SIGTERM_TIMEOUT=60
+kriptoyngD_SIGTERM_TIMEOUT=60

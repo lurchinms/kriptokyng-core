@@ -18,7 +18,7 @@
 #include <util.h>
 #include <utilstrencodings.h>
 
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <memory>
 

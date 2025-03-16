@@ -7,7 +7,7 @@
 #include <chainparams.h>
 #include <random.h>
 
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <boost/test/unit_test.hpp>
 

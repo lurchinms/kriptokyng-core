@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_NET_H
-#define TITCOIN_NET_H
+#ifndef kriptoyng_NET_H
+#define kriptoyng_NET_H
 
 #include <addrdb.h>
 #include <addrman.h>
@@ -859,4 +859,4 @@ public:
 /** Return a timestamp in the future (in microseconds) for exponentially distributed events. */
 int64_t PoissonNextSend(int64_t nNow, int average_interval_seconds);
 
-#endif // TITCOIN_NET_H
+#endif // kriptoyng_NET_H

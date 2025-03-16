@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_SYNC_H
-#define TITCOIN_SYNC_H
+#ifndef kriptoyng_SYNC_H
+#define kriptoyng_SYNC_H
 
 #include <threadsafety.h>
 
@@ -287,4 +287,4 @@ public:
     }
 };
 
-#endif // TITCOIN_SYNC_H
+#endif // kriptoyng_SYNC_H

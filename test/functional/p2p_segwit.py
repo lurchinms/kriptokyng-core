@@ -5,7 +5,7 @@
 """Test segwit transactions and blocks on P2P network."""
 
 from test_framework.mininode import *
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import *
 from test_framework.script import *
 from test_framework.blocktools import create_block, create_coinbase, add_witness_commitment, get_witness_script, WITNESS_COMMITMENT_HEADER
@@ -114,7 +114,7 @@ def sign_P2PK_witness_input(script, txTo, inIdx, hashtype, value, key):
     txTo.rehash()
 
 
-class SegWitTest(TitcoinTestFramework):
+class SegWitTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3
@@ -209,7 +209,7 @@ class SegWitTest(TitcoinTestFramework):
         # rule).
         test_witness_block(self.nodes[0].rpc, self.test_node, block, accepted=False)
         # TODO: fix synchronization so we can test reject reason
-        # Right now, titcoind delays sending reject messages for blocks
+        # Right now, kriptoyngd delays sending reject messages for blocks
         # until the future, making synchronization here difficult.
         #assert_equal(self.test_node.last_message["reject"].reason, "unexpected-witness")
 
@@ -533,7 +533,7 @@ class SegWitTest(TitcoinTestFramework):
         self.nodes[0].submitblock(bytes_to_hex_str(block.serialize(True)))
         assert(self.nodes[0].getbestblockhash() != block.hash)
 
-        # Now redo commitment with the standard nonce, but let titcoind fill it in.
+        # Now redo commitment with the standard nonce, but let kriptoyngd fill it in.
         add_witness_commitment(block, nonce=0)
         block.vtx[0].wit = CTxWitness()
         block.solve()
@@ -1455,7 +1455,7 @@ class SegWitTest(TitcoinTestFramework):
         # This transaction should not be accepted into the mempool pre- or
         # post-segwit.  Mempool acceptance will use SCRIPT_VERIFY_WITNESS which
         # will require a witness to spend a witness program regardless of
-        # segwit activation.  Note that older titcoind's that are not
+        # segwit activation.  Note that older kriptoyngd's that are not
         # segwit-aware would also reject this for failing CLEANSTACK.
         test_transaction_acceptance(self.nodes[0].rpc, self.test_node, spend_tx, with_witness=False, accepted=False)
 
@@ -1491,12 +1491,12 @@ class SegWitTest(TitcoinTestFramework):
     # Test the behavior of starting up a segwit-aware node after the softfork
     # has activated.  As segwit requires different block data than pre-segwit
     # nodes would have stored, this requires special handling.
-    # To enable this test, pass --oldbinary=<path-to-pre-segwit-titcoind> to
+    # To enable this test, pass --oldbinary=<path-to-pre-segwit-kriptoyngd> to
     # the test.
     def test_upgrade_after_activation(self, node_id):
         self.log.info("Testing software upgrade after softfork activation")
 
-        assert(node_id != 0) # node0 is assumed to be a segwit-active titcoind
+        assert(node_id != 0) # node0 is assumed to be a segwit-active kriptoyngd
 
         # Make sure the nodes are all up
         sync_blocks(self.nodes)

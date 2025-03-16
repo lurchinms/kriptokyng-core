@@ -5,7 +5,7 @@
 #include <serialize.h>
 #include <streams.h>
 #include <hash.h>
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <stdint.h>
 

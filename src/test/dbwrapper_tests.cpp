@@ -5,7 +5,7 @@
 #include <dbwrapper.h>
 #include <uint256.h>
 #include <random.h>
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <memory>
 

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_LIMITEDMAP_H
-#define TITCOIN_LIMITEDMAP_H
+#ifndef kriptoyng_LIMITEDMAP_H
+#define kriptoyng_LIMITEDMAP_H
 
 #include <assert.h>
 #include <map>
@@ -97,4 +97,4 @@ public:
     }
 };
 
-#endif // TITCOIN_LIMITEDMAP_H
+#endif // kriptoyng_LIMITEDMAP_H

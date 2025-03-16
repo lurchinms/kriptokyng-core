@@ -5,8 +5,8 @@
 /**
  * Functionality for communicating with Tor.
  */
-#ifndef TITCOIN_TORCONTROL_H
-#define TITCOIN_TORCONTROL_H
+#ifndef kriptoyng_TORCONTROL_H
+#define kriptoyng_TORCONTROL_H
 
 #include <scheduler.h>
 
@@ -17,4 +17,4 @@ void StartTorControl(boost::thread_group& threadGroup, CScheduler& scheduler);
 void InterruptTorControl();
 void StopTorControl();
 
-#endif /* TITCOIN_TORCONTROL_H */
+#endif /* kriptoyng_TORCONTROL_H */

@@ -4,10 +4,10 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the -uacomment option."""
 
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import assert_equal
 
-class UacommentTest(TitcoinTestFramework):
+class UacommentTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

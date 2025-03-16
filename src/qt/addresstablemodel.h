@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_ADDRESSTABLEMODEL_H
-#define TITCOIN_QT_ADDRESSTABLEMODEL_H
+#ifndef kriptoyng_QT_ADDRESSTABLEMODEL_H
+#define kriptoyng_QT_ADDRESSTABLEMODEL_H
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -28,7 +28,7 @@ public:
 
     enum ColumnIndex {
         Label = 0,   /**< User specified label */
-        Address = 1  /**< Titcoin address */
+        Address = 1  /**< kriptoyng address */
     };
 
     enum RoleIndex {
@@ -94,4 +94,4 @@ public Q_SLOTS:
     friend class AddressTablePriv;
 };
 
-#endif // TITCOIN_QT_ADDRESSTABLEMODEL_H
+#endif // kriptoyng_QT_ADDRESSTABLEMODEL_H

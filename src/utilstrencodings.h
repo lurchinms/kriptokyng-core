@@ -6,8 +6,8 @@
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef TITCOIN_UTILSTRENCODINGS_H
-#define TITCOIN_UTILSTRENCODINGS_H
+#ifndef kriptoyng_UTILSTRENCODINGS_H
+#define kriptoyng_UTILSTRENCODINGS_H
 
 #include <stdint.h>
 #include <string>
@@ -173,4 +173,4 @@ bool ConvertBits(O& out, I it, I end) {
     return true;
 }
 
-#endif // TITCOIN_UTILSTRENCODINGS_H
+#endif // kriptoyng_UTILSTRENCODINGS_H

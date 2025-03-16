@@ -6,9 +6,9 @@
 
 import os
 
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 
-class LoggingTest(TitcoinTestFramework):
+class LoggingTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

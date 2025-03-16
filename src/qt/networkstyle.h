@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_NETWORKSTYLE_H
-#define TITCOIN_QT_NETWORKSTYLE_H
+#ifndef kriptoyng_QT_NETWORKSTYLE_H
+#define kriptoyng_QT_NETWORKSTYLE_H
 
 #include <QIcon>
 #include <QPixmap>
@@ -30,4 +30,4 @@ private:
     QString titleAddText;
 };
 
-#endif // TITCOIN_QT_NETWORKSTYLE_H
+#endif // kriptoyng_QT_NETWORKSTYLE_H

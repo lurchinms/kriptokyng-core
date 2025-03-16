@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_GUIUTIL_H
-#define TITCOIN_QT_GUIUTIL_H
+#ifndef kriptoyng_QT_GUIUTIL_H
+#define kriptoyng_QT_GUIUTIL_H
 
 #include <amount.h>
 #include <fs.h>
@@ -29,7 +29,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Titcoin Qt UI.
+/** Utility functions used by the kriptoyng Qt UI.
  */
 namespace GUIUtil
 {
@@ -44,10 +44,10 @@ namespace GUIUtil
     void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "titcoin:" URI into recipient object, return true on successful parsing
-    bool parseTitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
-    bool parseTitcoinURI(QString uri, SendCoinsRecipient *out);
-    QString formatTitcoinURI(const SendCoinsRecipient &info);
+    // Parse "kriptoyng:" URI into recipient object, return true on successful parsing
+    bool parsekriptoyngURI(const QUrl &uri, SendCoinsRecipient *out);
+    bool parsekriptoyngURI(QString uri, SendCoinsRecipient *out);
+    QString formatkriptoyngURI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
     bool isDust(const QString& address, const CAmount& amount);
@@ -114,7 +114,7 @@ namespace GUIUtil
     void openDebugLogfile();
 
     // Open the config file
-    bool openTitcoinConf();
+    bool openkriptoyngConf();
 
     // Replace invalid default fonts with known good ones
     void SubstituteFonts(const QString& language);
@@ -245,4 +245,4 @@ namespace GUIUtil
 
 } // namespace GUIUtil
 
-#endif // TITCOIN_QT_GUIUTIL_H
+#endif // kriptoyng_QT_GUIUTIL_H

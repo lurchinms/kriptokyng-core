@@ -39,8 +39,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 /**
  * Build the genesis block. Note that the output of its generation
  * transaction cannot be spent since it did not originally exist in the
- * database. Also note that the Titcoin genesis block is invalid because
- * it does not meet the required difficulty. Apparently the original Titcoin
+ * database. Also note that the kriptoyng genesis block is invalid because
+ * it does not meet the required difficulty. Apparently the original kriptoyng
  * creator thought that having a valid genesis block would not be necessary.
  *
  * CBlock(hash=0d1f81f54505fb35e17a78fbe1f99acbdb45a4346e8aaafbc7fa132e154a7146, ver=0x00000001, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, hashMerkleRoot=91c608b07f6d177149f96e7027b186f3c528ad16fc7842ee2608668a216c51ff, nTime=1390239392, nBits=1d00ffff, nNonce=2083236893, vtx=1)
@@ -78,9 +78,9 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 500000; // TIT block reward is halving roughly every 347 days
-        consensus.DifficultyForkTime = 1409054400; // In the first 52 hours Titcoin was mined with standard difficulty rules (phase 1)
-        consensus.BIP16Height = 1; // Titcoin has been supporting BIP16 (P2SH) since the beginning
-        consensus.BIP34Height = 1; // Titcoin has been supporting BIP34 (block v2) since the beginning
+        consensus.DifficultyForkTime = 1409054400; // In the first 52 hours kriptoyng was mined with standard difficulty rules (phase 1)
+        consensus.BIP16Height = 1; // kriptoyng has been supporting BIP16 (P2SH) since the beginning
+        consensus.BIP34Height = 1; // kriptoyng has been supporting BIP34 (block v2) since the beginning
         consensus.BIP34Hash = uint256S("00000000bb82b1cbe86b5fe62967c13ff2e8cdabf68adeea2038289771c3491f"); // Block 1
         consensus.BIP65Height = 2400000; // Remaining old miners (mining block v2) will be kicked out
         consensus.BIP66Height = 2400000;
@@ -140,7 +140,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "titcoin";
+        bech32_hrp = "kriptoyng";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -218,7 +218,7 @@ public:
         //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
         vFixedSeeds.clear();
-        vSeeds.clear(); // Titcoin does not have a testnet
+        vSeeds.clear(); // kriptoyng does not have a testnet
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);

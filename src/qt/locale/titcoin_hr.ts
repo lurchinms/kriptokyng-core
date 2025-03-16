@@ -62,12 +62,12 @@
         <translation>Adresa primatelja</translation>
     </message>
     <message>
-        <source>These are your Titcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su vaše Titcoin adrese za slanje novca. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your kriptoyng addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su vaše kriptoyng adrese za slanje novca. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your Titcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Ovo su vaše Titcoin adrese za primanje novca. Preporučamo da koristite novu adresu za primanje za svaku transakciju.</translation>
+        <source>These are your kriptoyng addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Ovo su vaše kriptoyng adrese za primanje novca. Preporučamo da koristite novu adresu za primanje za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +168,8 @@
         <translation>Potvrdi šifriranje novčanika</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TITCOINS&lt;/b&gt;!</source>
-        <translation>Upozorenje: Ako šifrirate vaš novčanik i izgubite lozinku, &lt;b&gt;IZGUBIT ĆETE SVE SVOJE TITCOINE!&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR kriptoyngS&lt;/b&gt;!</source>
+        <translation>Upozorenje: Ako šifrirate vaš novčanik i izgubite lozinku, &lt;b&gt;IZGUBIT ĆETE SVE SVOJE kriptoyngE!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -220,7 +220,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>P&amp;otpišite poruku...</translation>
@@ -302,8 +302,8 @@
         <translation>Re-indeksiranje blokova na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Titcoin address</source>
-        <translation>Slanje novca na titcoin adresu</translation>
+        <source>Send coins to a kriptoyng address</source>
+        <translation>Slanje novca na kriptoyng adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -326,8 +326,8 @@
         <translation>&amp;Potvrdite poruku...</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -354,12 +354,12 @@
         <translation>Šifriranje privatnih ključeva koji u novčaniku</translation>
     </message>
     <message>
-        <source>Sign messages with your Titcoin addresses to prove you own them</source>
-        <translation>Poruku potpišemo s titcoin adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
+        <source>Sign messages with your kriptoyng addresses to prove you own them</source>
+        <translation>Poruku potpišemo s kriptoyng adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Titcoin addresses</source>
-        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom titcoin adresom</translation>
+        <source>Verify messages to ensure they were signed with specified kriptoyng addresses</source>
+        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom kriptoyng adresom</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -378,8 +378,8 @@
         <translation>Traka kartica</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and titcoin: URIs)</source>
-        <translation>Zatraži uplatu (stvara QR kod i titcoin: URI adresu)</translation>
+        <source>Request payments (generates QR codes and kriptoyng: URIs)</source>
+        <translation>Zatraži uplatu (stvara QR kod i kriptoyng: URI adresu)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -390,16 +390,16 @@
         <translation>Prikaži popis korištenih adresa i oznaka za primanje novca</translation>
     </message>
     <message>
-        <source>Open a titcoin: URI or payment request</source>
-        <translation>Otvori titcoin: URI adresu ili zahtjev za uplatu</translation>
+        <source>Open a kriptoyng: URI or payment request</source>
+        <translation>Otvori kriptoyng: URI adresu ili zahtjev za uplatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opcije &amp;naredbene linije</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Titcoin network</source>
-        <translation><numerusform>%n aktivna veza na Titcoin mrežu</numerusform><numerusform>%n aktivnih veza na Titcoin mrežu</numerusform><numerusform>%n aktivnih veza na Titcoin mrežu</numerusform></translation>
+        <source>%n active connection(s) to kriptoyng network</source>
+        <translation><numerusform>%n aktivna veza na kriptoyng mrežu</numerusform><numerusform>%n aktivnih veza na kriptoyng mrežu</numerusform><numerusform>%n aktivnih veza na kriptoyng mrežu</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -591,11 +591,11 @@
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Oznaka titcoin adrese</translation>
+        <translation>Oznaka kriptoyng adrese</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation>Titcoin adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
+        <translation>kriptoyng adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
     </message>
     <message>
         <source>&amp;Address</source>
@@ -618,8 +618,8 @@
         <translation>Uredi adresu za slanje</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Titcoin address.</source>
-        <translation>Upisana adresa "%1" nije valjana titcoin adresa.</translation>
+        <source>The entered address "%1" is not a valid kriptoyng address.</source>
+        <translation>Upisana adresa "%1" nije valjana kriptoyng adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -683,8 +683,8 @@
         <translation>Dobrodošli</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Error</source>
@@ -776,8 +776,8 @@
         <translation>&amp;Trošenje nepotvrđenih vraćenih iznosa</translation>
     </message>
     <message>
-        <source>Automatically open the Titcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvori port Titcoin klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
+        <source>Automatically open the kriptoyng client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvori port kriptoyng klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -825,7 +825,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Izaberite željeni najmanji dio titcoina koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio kriptoynga koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -855,8 +855,8 @@
         <translation>Oblik</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Titcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Prikazani podatci mogu biti zastarjeli. Vaš novčanik se automatski sinkronizira s Titcoin mrežom kada je veza uspostavljena, ali taj proces još nije završen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the kriptoyng network after a connection is established, but this process has not completed yet.</source>
+        <translation>Prikazani podatci mogu biti zastarjeli. Vaš novčanik se automatski sinkronizira s kriptoyng mrežom kada je veza uspostavljena, ali taj proces još nije završen.</translation>
     </message>
     <message>
         <source>Total:</source>
@@ -1648,7 +1648,7 @@
     </message>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Options:</source>
         <translation>Postavke:</translation>
@@ -1670,8 +1670,8 @@
         <translation>Izvršavaj u pozadini kao uslužnik i prihvaćaj komande</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Block creation options:</source>

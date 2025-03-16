@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_CUCKOOCACHE_H
-#define TITCOIN_CUCKOOCACHE_H
+#ifndef kriptoyng_CUCKOOCACHE_H
+#define kriptoyng_CUCKOOCACHE_H
 
 #include <array>
 #include <algorithm>
@@ -478,4 +478,4 @@ public:
 };
 } // namespace CuckooCache
 
-#endif // TITCOIN_CUCKOOCACHE_H
+#endif // kriptoyng_CUCKOOCACHE_H

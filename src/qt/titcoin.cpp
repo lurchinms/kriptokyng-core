@@ -3,10 +3,10 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
-#include <qt/titcoingui.h>
+#include <qt/kriptoynggui.h>
 
 #include <chainparams.h>
 #include <qt/clientmodel.h>
@@ -92,7 +92,7 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("titcoin", psz).toStdString();
+    return QCoreApplication::translate("kriptoyng", psz).toStdString();
 }
 
 static QString GetLangTerritory()
@@ -139,11 +139,11 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. titcoin_de.qm (shortcut "de" needs to be defined in titcoin.qrc)
+    // Load e.g. kriptoyng_de.qm (shortcut "de" needs to be defined in kriptoyng.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. titcoin_de_DE.qm (shortcut "de_DE" needs to be defined in titcoin.qrc)
+    // Load e.g. kriptoyng_de_DE.qm (shortcut "de_DE" needs to be defined in kriptoyng.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -170,14 +170,14 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 }
 #endif
 
-/** Class encapsulating Titcoin startup and shutdown.
+/** Class encapsulating kriptoyng startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
-class TitcoinCore: public QObject
+class kriptoyngCore: public QObject
 {
     Q_OBJECT
 public:
-    explicit TitcoinCore();
+    explicit kriptoyngCore();
     /** Basic initialization, before starting initialization/shutdown thread.
      * Return true on success.
      */
@@ -198,13 +198,13 @@ private:
     void handleRunawayException(const std::exception *e);
 };
 
-/** Main Titcoin application object */
-class TitcoinApplication: public QApplication
+/** Main kriptoyng application object */
+class kriptoyngApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit TitcoinApplication(int &argc, char **argv);
-    ~TitcoinApplication();
+    explicit kriptoyngApplication(int &argc, char **argv);
+    ~kriptoyngApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -227,7 +227,7 @@ public:
     /// Get process return value
     int getReturnValue() const { return returnValue; }
 
-    /// Get window identifier of QMainWindow (TitcoinGUI)
+    /// Get window identifier of QMainWindow (kriptoyngGUI)
     WId getMainWinId() const;
 
 public Q_SLOTS:
@@ -246,7 +246,7 @@ private:
     QThread *coreThread;
     OptionsModel *optionsModel;
     ClientModel *clientModel;
-    TitcoinGUI *window;
+    kriptoyngGUI *window;
     QTimer *pollShutdownTimer;
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer;
@@ -259,20 +259,20 @@ private:
     void startThread();
 };
 
-#include <qt/titcoin.moc>
+#include <qt/kriptoyng.moc>
 
-TitcoinCore::TitcoinCore():
+kriptoyngCore::kriptoyngCore():
     QObject()
 {
 }
 
-void TitcoinCore::handleRunawayException(const std::exception *e)
+void kriptoyngCore::handleRunawayException(const std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
     Q_EMIT runawayException(QString::fromStdString(GetWarnings("gui")));
 }
 
-bool TitcoinCore::baseInitialize()
+bool kriptoyngCore::baseInitialize()
 {
     if (!AppInitBasicSetup())
     {
@@ -293,7 +293,7 @@ bool TitcoinCore::baseInitialize()
     return true;
 }
 
-void TitcoinCore::initialize()
+void kriptoyngCore::initialize()
 {
     try
     {
@@ -307,7 +307,7 @@ void TitcoinCore::initialize()
     }
 }
 
-void TitcoinCore::shutdown()
+void kriptoyngCore::shutdown()
 {
     try
     {
@@ -323,7 +323,7 @@ void TitcoinCore::shutdown()
     }
 }
 
-TitcoinApplication::TitcoinApplication(int &argc, char **argv):
+kriptoyngApplication::kriptoyngApplication(int &argc, char **argv):
     QApplication(argc, argv),
     coreThread(0),
     optionsModel(0),
@@ -339,17 +339,17 @@ TitcoinApplication::TitcoinApplication(int &argc, char **argv):
     setQuitOnLastWindowClosed(false);
 
     // UI per-platform customization
-    // This must be done inside the TitcoinApplication constructor, or after it, because
+    // This must be done inside the kriptoyngApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
-    platformName = gArgs.GetArg("-uiplatform", TitcoinGUI::DEFAULT_UIPLATFORM);
+    platformName = gArgs.GetArg("-uiplatform", kriptoyngGUI::DEFAULT_UIPLATFORM);
     platformStyle = PlatformStyle::instantiate(QString::fromStdString(platformName));
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
 }
 
-TitcoinApplication::~TitcoinApplication()
+kriptoyngApplication::~kriptoyngApplication()
 {
     if(coreThread)
     {
@@ -372,26 +372,26 @@ TitcoinApplication::~TitcoinApplication()
 }
 
 #ifdef ENABLE_WALLET
-void TitcoinApplication::createPaymentServer()
+void kriptoyngApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-void TitcoinApplication::createOptionsModel(bool resetSettings)
+void kriptoyngApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(nullptr, resetSettings);
 }
 
-void TitcoinApplication::createWindow(const NetworkStyle *networkStyle)
+void kriptoyngApplication::createWindow(const NetworkStyle *networkStyle)
 {
-    window = new TitcoinGUI(platformStyle, networkStyle, 0);
+    window = new kriptoyngGUI(platformStyle, networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, SIGNAL(timeout()), window, SLOT(detectShutdown()));
 }
 
-void TitcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void kriptoyngApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     SplashScreen *splash = new SplashScreen(0, networkStyle);
     // We don't hold a direct pointer to the splash screen after creation, but the splash
@@ -401,12 +401,12 @@ void TitcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
     connect(this, SIGNAL(requestedShutdown()), splash, SLOT(close()));
 }
 
-void TitcoinApplication::startThread()
+void kriptoyngApplication::startThread()
 {
     if(coreThread)
         return;
     coreThread = new QThread(this);
-    TitcoinCore *executor = new TitcoinCore();
+    kriptoyngCore *executor = new kriptoyngCore();
     executor->moveToThread(coreThread);
 
     /*  communication to and from thread */
@@ -422,20 +422,20 @@ void TitcoinApplication::startThread()
     coreThread->start();
 }
 
-void TitcoinApplication::parameterSetup()
+void kriptoyngApplication::parameterSetup()
 {
     InitLogging();
     InitParameterInteraction();
 }
 
-void TitcoinApplication::requestInitialize()
+void kriptoyngApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void TitcoinApplication::requestShutdown()
+void kriptoyngApplication::requestShutdown()
 {
     // Show a simple window indicating shutdown status
     // Do this first as some of the steps may take some time below,
@@ -462,7 +462,7 @@ void TitcoinApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void TitcoinApplication::initializeResult(bool success)
+void kriptoyngApplication::initializeResult(bool success)
 {
     qDebug() << __func__ << ": Initialization result: " << success;
     // Set exit result.
@@ -485,8 +485,8 @@ void TitcoinApplication::initializeResult(bool success)
         {
             walletModel = new WalletModel(platformStyle, vpwallets[0], optionsModel);
 
-            window->addWallet(TitcoinGUI::DEFAULT_WALLET, walletModel);
-            window->setCurrentWallet(TitcoinGUI::DEFAULT_WALLET);
+            window->addWallet(kriptoyngGUI::DEFAULT_WALLET, walletModel);
+            window->setCurrentWallet(kriptoyngGUI::DEFAULT_WALLET);
 
             connect(walletModel, SIGNAL(coinsSent(CWallet*,SendCoinsRecipient,QByteArray)),
                              paymentServer, SLOT(fetchPaymentACK(CWallet*,const SendCoinsRecipient&,QByteArray)));
@@ -506,7 +506,7 @@ void TitcoinApplication::initializeResult(bool success)
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // titcoin: URIs or payment requests:
+        // kriptoyng: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
                          window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
@@ -522,18 +522,18 @@ void TitcoinApplication::initializeResult(bool success)
     }
 }
 
-void TitcoinApplication::shutdownResult()
+void kriptoyngApplication::shutdownResult()
 {
     quit(); // Exit second main loop invocation after shutdown finished
 }
 
-void TitcoinApplication::handleRunawayException(const QString &message)
+void kriptoyngApplication::handleRunawayException(const QString &message)
 {
-    QMessageBox::critical(0, "Runaway exception", TitcoinGUI::tr("A fatal error occurred. Titcoin can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", kriptoyngGUI::tr("A fatal error occurred. kriptoyng can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(EXIT_FAILURE);
 }
 
-WId TitcoinApplication::getMainWinId() const
+WId kriptoyngApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -541,7 +541,7 @@ WId TitcoinApplication::getMainWinId() const
     return window->winId();
 }
 
-#ifndef TITCOIN_QT_TEST
+#ifndef kriptoyng_QT_TEST
 int main(int argc, char *argv[])
 {
     SetupEnvironment();
@@ -559,10 +559,10 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(titcoin);
-    Q_INIT_RESOURCE(titcoin_locale);
+    Q_INIT_RESOURCE(kriptoyng);
+    Q_INIT_RESOURCE(kriptoyng_locale);
 
-    TitcoinApplication app(argc, argv);
+    kriptoyngApplication app(argc, argv);
 #if QT_VERSION > 0x050100
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -616,7 +616,7 @@ int main(int argc, char *argv[])
     if (!Intro::pickDataDirectory())
         return EXIT_SUCCESS;
 
-    /// 6. Determine availability of data directory and parse titcoin.conf
+    /// 6. Determine availability of data directory and parse kriptoyng.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!fs::is_directory(GetDataDir(false)))
     {
@@ -625,7 +625,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
     try {
-        gArgs.ReadConfigFile(gArgs.GetArg("-conf", TITCOIN_CONF_FILENAME));
+        gArgs.ReadConfigFile(gArgs.GetArg("-conf", kriptoyng_CONF_FILENAME));
     } catch (const std::exception& e) {
         QMessageBox::critical(0, QObject::tr(PACKAGE_NAME),
                               QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
@@ -668,7 +668,7 @@ int main(int argc, char *argv[])
         exit(EXIT_SUCCESS);
 
     // Start up the payment server early, too, so impatient users that click on
-    // titcoin: links repeatedly have their payment requests routed to this process:
+    // kriptoyng: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
 
@@ -704,7 +704,7 @@ int main(int argc, char *argv[])
         // Perform base initialization before spinning up initialization/shutdown thread
         // This is acceptable because this function only contains steps that are quick to execute,
         // so the GUI thread won't be held up.
-        if (TitcoinCore::baseInitialize()) {
+        if (kriptoyngCore::baseInitialize()) {
             app.requestInitialize();
 #if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
             WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("%1 didn't yet exit safely...").arg(QObject::tr(PACKAGE_NAME)), (HWND)app.getMainWinId());
@@ -726,4 +726,4 @@ int main(int argc, char *argv[])
     }
     return rv;
 }
-#endif // TITCOIN_QT_TEST
+#endif // kriptoyng_QT_TEST

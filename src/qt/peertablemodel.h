@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_PEERTABLEMODEL_H
-#define TITCOIN_QT_PEERTABLEMODEL_H
+#ifndef kriptoyng_QT_PEERTABLEMODEL_H
+#define kriptoyng_QT_PEERTABLEMODEL_H
 
 #include <net_processing.h> // For CNodeStateStats
 #include <net.h>
@@ -84,4 +84,4 @@ private:
     QTimer *timer;
 };
 
-#endif // TITCOIN_QT_PEERTABLEMODEL_H
+#endif // kriptoyng_QT_PEERTABLEMODEL_H

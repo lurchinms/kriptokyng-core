@@ -12,7 +12,7 @@
 
 #include <support/events.h>
 
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <vector>
 

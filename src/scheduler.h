@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_SCHEDULER_H
-#define TITCOIN_SCHEDULER_H
+#ifndef kriptoyng_SCHEDULER_H
+#define kriptoyng_SCHEDULER_H
 
 //
 // NOTE:

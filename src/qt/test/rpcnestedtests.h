@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TEST_RPC_NESTED_TESTS_H
-#define TITCOIN_QT_TEST_RPC_NESTED_TESTS_H
+#ifndef kriptoyng_QT_TEST_RPC_NESTED_TESTS_H
+#define kriptoyng_QT_TEST_RPC_NESTED_TESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -19,4 +19,4 @@ class RPCNestedTests : public QObject
     void rpcNestedTests();
 };
 
-#endif // TITCOIN_QT_TEST_RPC_NESTED_TESTS_H
+#endif // kriptoyng_QT_TEST_RPC_NESTED_TESTS_H

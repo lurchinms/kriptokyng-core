@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TEST_PAYMENTSERVERTESTS_H
-#define TITCOIN_QT_TEST_PAYMENTSERVERTESTS_H
+#ifndef kriptoyng_QT_TEST_PAYMENTSERVERTESTS_H
+#define kriptoyng_QT_TEST_PAYMENTSERVERTESTS_H
 
 #include <qt/paymentserver.h>
 
@@ -32,4 +32,4 @@ public:
     SendCoinsRecipient recipient;
 };
 
-#endif // TITCOIN_QT_TEST_PAYMENTSERVERTESTS_H
+#endif // kriptoyng_QT_TEST_PAYMENTSERVERTESTS_H

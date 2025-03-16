@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_RPCCONSOLE_H
-#define TITCOIN_QT_RPCCONSOLE_H
+#ifndef kriptoyng_QT_RPCCONSOLE_H
+#define kriptoyng_QT_RPCCONSOLE_H
 
 #include <qt/guiutil.h>
 #include <qt/peertablemodel.h>
@@ -27,7 +27,7 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local Titcoin RPC console. */
+/** Local kriptoyng RPC console. */
 class RPCConsole: public QWidget
 {
     Q_OBJECT
@@ -156,4 +156,4 @@ private:
     void updateNetworkState();
 };
 
-#endif // TITCOIN_QT_RPCCONSOLE_H
+#endif // kriptoyng_QT_RPCCONSOLE_H

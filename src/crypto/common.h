@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_CRYPTO_COMMON_H
-#define TITCOIN_CRYPTO_COMMON_H
+#ifndef kriptoyng_CRYPTO_COMMON_H
+#define kriptoyng_CRYPTO_COMMON_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #include <stdint.h>
@@ -100,4 +100,4 @@ uint64_t static inline CountBits(uint64_t x)
     return ret;
 }
 
-#endif // TITCOIN_CRYPTO_COMMON_H
+#endif // kriptoyng_CRYPTO_COMMON_H

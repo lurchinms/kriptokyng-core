@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_CRYPTO_SHA512_H
-#define TITCOIN_CRYPTO_SHA512_H
+#ifndef kriptoyng_CRYPTO_SHA512_H
+#define kriptoyng_CRYPTO_SHA512_H
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -25,4 +25,4 @@ public:
     CSHA512& Reset();
 };
 
-#endif // TITCOIN_CRYPTO_SHA512_H
+#endif // kriptoyng_CRYPTO_SHA512_H

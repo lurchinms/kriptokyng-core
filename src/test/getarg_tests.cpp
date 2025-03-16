@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <util.h>
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <string>
 #include <vector>
@@ -20,7 +20,7 @@ static void ResetArgs(const std::string& strArg)
       boost::split(vecArg, strArg, boost::is_space(), boost::token_compress_on);
 
     // Insert dummy executable name:
-    vecArg.insert(vecArg.begin(), "testtitcoin");
+    vecArg.insert(vecArg.begin(), "testkriptoyng");
 
     // Convert to char*:
     std::vector<const char*> vecChar;

@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #include <qt/optionsmodel.h>
 
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngunits.h>
 #include <qt/guiutil.h>
 
 #include <init.h>
@@ -73,7 +73,7 @@ void OptionsModel::Init(bool resetSettings)
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", TitcoinUnits::TIT);
+        settings.setValue("nDisplayUnit", kriptoyngUnits::TIT);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     if (!settings.contains("strThirdPartyTxUrls"))

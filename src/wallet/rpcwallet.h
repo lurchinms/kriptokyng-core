@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_WALLET_RPCWALLET_H
-#define TITCOIN_WALLET_RPCWALLET_H
+#ifndef kriptoyng_WALLET_RPCWALLET_H
+#define kriptoyng_WALLET_RPCWALLET_H
 
 #include <string>
 
@@ -25,4 +25,4 @@ std::string HelpRequiringPassphrase(CWallet *);
 void EnsureWalletIsUnlocked(CWallet *);
 bool EnsureWalletIsAvailable(CWallet *, bool avoidException);
 
-#endif //TITCOIN_WALLET_RPCWALLET_H
+#endif //kriptoyng_WALLET_RPCWALLET_H

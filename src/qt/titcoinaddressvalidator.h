@@ -2,34 +2,34 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TITCOINADDRESSVALIDATOR_H
-#define TITCOIN_QT_TITCOINADDRESSVALIDATOR_H
+#ifndef kriptoyng_QT_kriptoyngADDRESSVALIDATOR_H
+#define kriptoyng_QT_kriptoyngADDRESSVALIDATOR_H
 
 #include <QValidator>
 
 /** Base58 entry widget validator, checks for valid characters and
  * removes some whitespace.
  */
-class TitcoinAddressEntryValidator : public QValidator
+class kriptoyngAddressEntryValidator : public QValidator
 {
     Q_OBJECT
 
 public:
-    explicit TitcoinAddressEntryValidator(QObject *parent);
+    explicit kriptoyngAddressEntryValidator(QObject *parent);
 
     State validate(QString &input, int &pos) const;
 };
 
-/** Titcoin address widget validator, checks for a valid titcoin address.
+/** kriptoyng address widget validator, checks for a valid kriptoyng address.
  */
-class TitcoinAddressCheckValidator : public QValidator
+class kriptoyngAddressCheckValidator : public QValidator
 {
     Q_OBJECT
 
 public:
-    explicit TitcoinAddressCheckValidator(QObject *parent);
+    explicit kriptoyngAddressCheckValidator(QObject *parent);
 
     State validate(QString &input, int &pos) const;
 };
 
-#endif // TITCOIN_QT_TITCOINADDRESSVALIDATOR_H
+#endif // kriptoyng_QT_kriptoyngADDRESSVALIDATOR_H

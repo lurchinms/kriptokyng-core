@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_SCRIPT_SIGCACHE_H
-#define TITCOIN_SCRIPT_SIGCACHE_H
+#ifndef kriptoyng_SCRIPT_SIGCACHE_H
+#define kriptoyng_SCRIPT_SIGCACHE_H
 
 #include <script/interpreter.h>
 
@@ -53,4 +53,4 @@ public:
 
 void InitSignatureCache();
 
-#endif // TITCOIN_SCRIPT_SIGCACHE_H
+#endif // kriptoyng_SCRIPT_SIGCACHE_H

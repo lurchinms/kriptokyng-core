@@ -2,8 +2,8 @@
 // Copyright (c) 2009-2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef TITCOIN_POLICYESTIMATOR_H
-#define TITCOIN_POLICYESTIMATOR_H
+#ifndef kriptoyng_POLICYESTIMATOR_H
+#define kriptoyng_POLICYESTIMATOR_H
 
 #include <amount.h>
 #include <policy/feerate.h>
@@ -295,4 +295,4 @@ private:
     FastRandomContext insecure_rand;
 };
 
-#endif /*TITCOIN_POLICYESTIMATOR_H */
+#endif /*kriptoyng_POLICYESTIMATOR_H */

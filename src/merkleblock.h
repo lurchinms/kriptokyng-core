@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_MERKLEBLOCK_H
-#define TITCOIN_MERKLEBLOCK_H
+#ifndef kriptoyng_MERKLEBLOCK_H
+#define kriptoyng_MERKLEBLOCK_H
 
 #include <serialize.h>
 #include <uint256.h>
@@ -170,4 +170,4 @@ private:
     CMerkleBlock(const CBlock& block, CBloomFilter* filter, const std::set<uint256>* txids);
 };
 
-#endif // TITCOIN_MERKLEBLOCK_H
+#endif // kriptoyng_MERKLEBLOCK_H

@@ -62,11 +62,11 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your Titcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your kriptoyng addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>这是你的比特币发币地址。发送前请确认发送数量和接收地址</translation>
     </message>
     <message>
-        <source>These are your Titcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your kriptoyng addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>这是你的比特币接收地址。建议每次交易都使用新地址</translation>
     </message>
     <message>
@@ -120,7 +120,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>
@@ -270,6 +270,6 @@
     </message>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     </context>
 </TS>

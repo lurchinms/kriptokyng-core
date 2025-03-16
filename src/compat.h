@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_COMPAT_H
-#define TITCOIN_COMPAT_H
+#ifndef kriptoyng_COMPAT_H
+#define kriptoyng_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/titcoin-config.h>
+#include <config/kriptoyng-config.h>
 #endif
 
 #ifdef WIN32
@@ -94,4 +94,4 @@ bool static inline IsSelectableSocket(const SOCKET& s) {
 #endif
 }
 
-#endif // TITCOIN_COMPAT_H
+#endif // kriptoyng_COMPAT_H

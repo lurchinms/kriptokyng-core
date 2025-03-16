@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TITCOINUNITS_H
-#define TITCOIN_QT_TITCOINUNITS_H
+#ifndef kriptoyng_QT_kriptoyngUNITS_H
+#define kriptoyng_QT_kriptoyngUNITS_H
 
 #include <amount.h>
 
@@ -41,17 +41,17 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** Titcoin unit definitions. Encapsulates parsing and formatting
+/** kriptoyng unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class TitcoinUnits: public QAbstractListModel
+class kriptoyngUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit TitcoinUnits(QObject *parent);
+    explicit kriptoyngUnits(QObject *parent);
 
-    /** Titcoin units.
+    /** kriptoyng units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
@@ -123,8 +123,8 @@ public:
     static CAmount maxMoney();
 
 private:
-    QList<TitcoinUnits::Unit> unitlist;
+    QList<kriptoyngUnits::Unit> unitlist;
 };
-typedef TitcoinUnits::Unit TitcoinUnit;
+typedef kriptoyngUnits::Unit kriptoyngUnit;
 
-#endif // TITCOIN_QT_TITCOINUNITS_H
+#endif // kriptoyng_QT_kriptoyngUNITS_H

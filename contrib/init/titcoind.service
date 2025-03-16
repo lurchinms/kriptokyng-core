@@ -1,23 +1,23 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit titcoind.service
+# $ systemctl edit kriptoyngd.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/titcoin/titcoin.conf
+# /etc/kriptoyng/kriptoyng.conf
 
 [Unit]
-Description=Titcoin daemon
+Description=kriptoyng daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/titcoind -daemon -conf=/etc/titcoin/titcoin.conf -pid=/run/titcoind/titcoind.pid
-# Creates /run/titcoind owned by titcoin
-RuntimeDirectory=titcoind
-User=titcoin
+ExecStart=/usr/bin/kriptoyngd -daemon -conf=/etc/kriptoyng/kriptoyng.conf -pid=/run/kriptoyngd/kriptoyngd.pid
+# Creates /run/kriptoyngd owned by kriptoyng
+RuntimeDirectory=kriptoyngd
+User=kriptoyng
 Type=forking
-PIDFile=/run/titcoind/titcoind.pid
+PIDFile=/run/kriptoyngd/kriptoyngd.pid
 Restart=on-failure
 PrivateTmp=true
 

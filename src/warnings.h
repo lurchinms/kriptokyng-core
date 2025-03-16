@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_WARNINGS_H
-#define TITCOIN_WARNINGS_H
+#ifndef kriptoyng_WARNINGS_H
+#define kriptoyng_WARNINGS_H
 
 #include <stdlib.h>
 #include <string>
@@ -24,4 +24,4 @@ std::string GetWarnings(const std::string& strFor);
 
 static const bool DEFAULT_TESTSAFEMODE = false;
 
-#endif //  TITCOIN_WARNINGS_H
+#endif //  kriptoyng_WARNINGS_H

@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_TRANSACTIONTABLEMODEL_H
-#define TITCOIN_QT_TRANSACTIONTABLEMODEL_H
+#ifndef kriptoyng_QT_TRANSACTIONTABLEMODEL_H
+#define kriptoyng_QT_TRANSACTIONTABLEMODEL_H
 
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngunits.h>
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -98,7 +98,7 @@ private:
     QString formatTxDate(const TransactionRecord *wtx) const;
     QString formatTxType(const TransactionRecord *wtx) const;
     QString formatTxToAddress(const TransactionRecord *wtx, bool tooltip) const;
-    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, TitcoinUnits::SeparatorStyle separators=TitcoinUnits::separatorStandard) const;
+    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, kriptoyngUnits::SeparatorStyle separators=kriptoyngUnits::separatorStandard) const;
     QString formatTooltip(const TransactionRecord *rec) const;
     QVariant txStatusDecoration(const TransactionRecord *wtx) const;
     QVariant txWatchonlyDecoration(const TransactionRecord *wtx) const;
@@ -117,4 +117,4 @@ public Q_SLOTS:
     friend class TransactionTablePriv;
 };
 
-#endif // TITCOIN_QT_TRANSACTIONTABLEMODEL_H
+#endif // kriptoyng_QT_TRANSACTIONTABLEMODEL_H

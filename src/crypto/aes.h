@@ -4,8 +4,8 @@
 //
 // C++ wrapper around ctaes, a constant-time AES implementation
 
-#ifndef TITCOIN_CRYPTO_AES_H
-#define TITCOIN_CRYPTO_AES_H
+#ifndef kriptoyng_CRYPTO_AES_H
+#define kriptoyng_CRYPTO_AES_H
 
 extern "C" {
 #include <crypto/ctaes/ctaes.h>
@@ -115,4 +115,4 @@ private:
     unsigned char iv[AES_BLOCKSIZE];
 };
 
-#endif // TITCOIN_CRYPTO_AES_H
+#endif // kriptoyng_CRYPTO_AES_H

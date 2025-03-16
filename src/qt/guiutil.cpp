@@ -4,8 +4,8 @@
 
 #include <qt/guiutil.h>
 
-#include <qt/titcoinaddressvalidator.h>
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngaddressvalidator.h>
+#include <qt/kriptoyngunits.h>
 #include <qt/qvalidatedlineedit.h>
 #include <qt/walletmodel.h>
 
@@ -127,11 +127,11 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Titcoin address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a kriptoyng address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
 #endif
-    widget->setValidator(new TitcoinAddressEntryValidator(parent));
-    widget->setCheckValidator(new TitcoinAddressCheckValidator(parent));
+    widget->setValidator(new kriptoyngAddressEntryValidator(parent));
+    widget->setCheckValidator(new kriptoyngAddressCheckValidator(parent));
 }
 
 void setupAmountWidget(QLineEdit *widget, QWidget *parent)
@@ -143,10 +143,10 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
     widget->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
 }
 
-bool parseTitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parsekriptoyngURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no titcoin: URI
-    if(!uri.isValid() || uri.scheme() != QString("titcoin"))
+    // return if URI is not valid or is no kriptoyng: URI
+    if(!uri.isValid() || uri.scheme() != QString("kriptoyng"))
         return false;
 
     SendCoinsRecipient rv;
@@ -186,7 +186,7 @@ bool parseTitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!TitcoinUnits::parse(TitcoinUnits::TIT, i->second, &rv.amount))
+                if(!kriptoyngUnits::parse(kriptoyngUnits::TIT, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -204,28 +204,28 @@ bool parseTitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseTitcoinURI(QString uri, SendCoinsRecipient *out)
+bool parsekriptoyngURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert titcoin:// to titcoin:
+    // Convert kriptoyng:// to kriptoyng:
     //
-    //    Cannot handle this later, because titcoin:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because kriptoyng:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("titcoin://", Qt::CaseInsensitive))
+    if(uri.startsWith("kriptoyng://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 10, "titcoin:");
+        uri.replace(0, 10, "kriptoyng:");
     }
     QUrl uriInstance(uri);
-    return parseTitcoinURI(uriInstance, out);
+    return parsekriptoyngURI(uriInstance, out);
 }
 
-QString formatTitcoinURI(const SendCoinsRecipient &info)
+QString formatkriptoyngURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("titcoin:%1").arg(info.address);
+    QString ret = QString("kriptoyng:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(TitcoinUnits::format(TitcoinUnits::TIT, info.amount, false, TitcoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(kriptoyngUnits::format(kriptoyngUnits::TIT, info.amount, false, kriptoyngUnits::separatorNever));
         paramCount++;
     }
 
@@ -415,9 +415,9 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathDebug)));
 }
 
-bool openTitcoinConf()
+bool openkriptoyngConf()
 {
-    boost::filesystem::path pathConfig = GetConfigFile(TITCOIN_CONF_FILENAME);
+    boost::filesystem::path pathConfig = GetConfigFile(kriptoyng_CONF_FILENAME);
 
     /* Create the file */
     boost::filesystem::ofstream configFile(pathConfig, std::ios_base::app);
@@ -427,7 +427,7 @@ bool openTitcoinConf()
     
     configFile.close();
     
-    /* Open titcoin.conf with the associated application */
+    /* Open kriptoyng.conf with the associated application */
     return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
 
@@ -615,15 +615,15 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Titcoin.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "kriptoyng.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Titcoin (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Titcoin (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "kriptoyng (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("kriptoyng (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Titcoin*.lnk
+    // check for kriptoyng*.lnk
     return fs::exists(StartupShortcutPath());
 }
 
@@ -713,8 +713,8 @@ fs::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "titcoin.desktop";
-    return GetAutostartDir() / strprintf("titcoin-%s.lnk", chain);
+        return GetAutostartDir() / "kriptoyng.desktop";
+    return GetAutostartDir() / strprintf("kriptoyng-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -754,13 +754,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a titcoin.desktop file to the autostart directory:
+        // Write a kriptoyng.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Titcoin\n";
+            optionFile << "Name=kriptoyng\n";
         else
-            optionFile << strprintf("Name=Titcoin (%s)\n", chain);
+            optionFile << strprintf("Name=kriptoyng (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", gArgs.GetBoolArg("-testnet", false), gArgs.GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -786,7 +786,7 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
         return nullptr;
     }
     
-    // loop through the list of startup items and try to find the titcoin app
+    // loop through the list of startup items and try to find the kriptoyng app
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
         UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
@@ -820,38 +820,38 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
 
 bool GetStartOnSystemStartup()
 {
-    CFURLRef titcoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-    if (titcoinAppUrl == nullptr) {
+    CFURLRef kriptoyngAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    if (kriptoyngAppUrl == nullptr) {
         return false;
     }
     
     LSSharedFileListRef loginItems = LSSharedFileListCreate(nullptr, kLSSharedFileListSessionLoginItems, nullptr);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, titcoinAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, kriptoyngAppUrl);
 
-    CFRelease(titcoinAppUrl);
+    CFRelease(kriptoyngAppUrl);
     return !!foundItem; // return boolified object
 }
 
 bool SetStartOnSystemStartup(bool fAutoStart)
 {
-    CFURLRef titcoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-    if (titcoinAppUrl == nullptr) {
+    CFURLRef kriptoyngAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    if (kriptoyngAppUrl == nullptr) {
         return false;
     }
     
     LSSharedFileListRef loginItems = LSSharedFileListCreate(nullptr, kLSSharedFileListSessionLoginItems, nullptr);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, titcoinAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, kriptoyngAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add titcoin app to startup item list
-        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, nullptr, nullptr, titcoinAppUrl, nullptr, nullptr);
+        // add kriptoyng app to startup item list
+        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, nullptr, nullptr, kriptoyngAppUrl, nullptr, nullptr);
     }
     else if(!fAutoStart && foundItem) {
         // remove item
         LSSharedFileListItemRemove(loginItems, foundItem);
     }
     
-    CFRelease(titcoinAppUrl);
+    CFRelease(kriptoyngAppUrl);
     return true;
 }
 #pragma GCC diagnostic pop

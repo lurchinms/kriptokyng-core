@@ -64,7 +64,7 @@
     </message>
 </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>E&amp;xit</source>
         <translation>Buda</translation>
@@ -98,8 +98,8 @@
         <translation>Vhura &amp;URI</translation>
     </message>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -165,8 +165,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Titcoin</source>
-        <translation>Titcoin</translation>
+        <source>kriptoyng</source>
+        <translation>kriptoyng</translation>
     </message>
     </context>
 <context>
@@ -194,8 +194,8 @@
         <translation>Marii </translation>
     </message>
     <message>
-        <source>Enter a Titcoin address (e.g. %1)</source>
-        <translation>Nyora kero ye Titcoin (sekuti %1)</translation>
+        <source>Enter a kriptoyng address (e.g. %1)</source>
+        <translation>Nyora kero ye kriptoyng (sekuti %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -350,7 +350,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Information</source>
         <translation>Ruzivo</translation>

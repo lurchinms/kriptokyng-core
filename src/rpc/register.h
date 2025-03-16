@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_RPCREGISTER_H
-#define TITCOIN_RPCREGISTER_H
+#ifndef kriptoyng_RPCREGISTER_H
+#define kriptoyng_RPCREGISTER_H
 
 /** These are in one header file to avoid creating tons of single-function
  * headers for everything under src/rpc/ */

@@ -60,7 +60,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>TitcoinGUI</name>
+    <name>kriptoyngGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Зурвас хавсаргах...</translation>
@@ -126,7 +126,7 @@
         <translation>Оношилгоо ба засварын консолыг онгойлго</translation>
     </message>
     <message>
-        <source>Titcoin</source>
+        <source>kriptoyng</source>
         <translation>Биткойн</translation>
     </message>
     <message>
@@ -233,7 +233,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Titcoin</source>
+        <source>kriptoyng</source>
         <translation>Биткойн</translation>
     </message>
     <message>
@@ -558,7 +558,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>titcoin</name>
+    <name>kriptoyng</name>
     <message>
         <source>Options:</source>
         <translation>Сонголтууд:</translation>

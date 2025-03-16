@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_BLOCK_ENCODINGS_H
-#define TITCOIN_BLOCK_ENCODINGS_H
+#ifndef kriptoyng_BLOCK_ENCODINGS_H
+#define kriptoyng_BLOCK_ENCODINGS_H
 
 #include <primitives/block.h>
 

@@ -2,125 +2,125 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/titcoin-qt
-EXTRA_LIBRARIES += qt/libtitcoinqt.a
+bin_PROGRAMS += qt/kriptoyng-qt
+EXTRA_LIBRARIES += qt/libkriptoyngqt.a
 
-# titcoin qt core #
+# kriptoyng qt core #
 QT_TS = \
-  qt/locale/titcoin_af.ts \
-  qt/locale/titcoin_af_ZA.ts \
-  qt/locale/titcoin_am.ts \
-  qt/locale/titcoin_ar.ts \
-  qt/locale/titcoin_be_BY.ts \
-  qt/locale/titcoin_bg_BG.ts \
-  qt/locale/titcoin_bg.ts \
-  qt/locale/titcoin_bn.ts \
-  qt/locale/titcoin_bs.ts \
-  qt/locale/titcoin_ca_ES.ts \
-  qt/locale/titcoin_ca.ts \
-  qt/locale/titcoin_ca@valencia.ts \
-  qt/locale/titcoin_cs_CZ.ts \
-  qt/locale/titcoin_cs.ts \
-  qt/locale/titcoin_cy.ts \
-  qt/locale/titcoin_da.ts \
-  qt/locale/titcoin_de_DE.ts \
-  qt/locale/titcoin_de.ts \
-  qt/locale/titcoin_el_GR.ts \
-  qt/locale/titcoin_el.ts \
-  qt/locale/titcoin_en_AU.ts \
-  qt/locale/titcoin_en_GB.ts \
-  qt/locale/titcoin_en.ts \
-  qt/locale/titcoin_eo.ts \
-  qt/locale/titcoin_es_419.ts \
-  qt/locale/titcoin_es_AR.ts \
-  qt/locale/titcoin_es_CL.ts \
-  qt/locale/titcoin_es_CO.ts \
-  qt/locale/titcoin_es_DO.ts \
-  qt/locale/titcoin_es_ES.ts \
-  qt/locale/titcoin_es_MX.ts \
-  qt/locale/titcoin_es.ts \
-  qt/locale/titcoin_es_UY.ts \
-  qt/locale/titcoin_es_VE.ts \
-  qt/locale/titcoin_et_EE.ts \
-  qt/locale/titcoin_et.ts \
-  qt/locale/titcoin_eu_ES.ts \
-  qt/locale/titcoin_fa_IR.ts \
-  qt/locale/titcoin_fa.ts \
-  qt/locale/titcoin_fi.ts \
-  qt/locale/titcoin_fr_CA.ts \
-  qt/locale/titcoin_fr_FR.ts \
-  qt/locale/titcoin_fr.ts \
-  qt/locale/titcoin_gl.ts \
-  qt/locale/titcoin_he_IL.ts \
-  qt/locale/titcoin_he.ts \
-  qt/locale/titcoin_hi_IN.ts \
-  qt/locale/titcoin_hr.ts \
-  qt/locale/titcoin_hu_HU.ts \
-  qt/locale/titcoin_hu.ts \
-  qt/locale/titcoin_id_ID.ts \
-  qt/locale/titcoin_id.ts \
-  qt/locale/titcoin_is.ts \
-  qt/locale/titcoin_it_IT.ts \
-  qt/locale/titcoin_it.ts \
-  qt/locale/titcoin_ja_JP.ts \
-  qt/locale/titcoin_ja.ts \
-  qt/locale/titcoin_ka.ts \
-  qt/locale/titcoin_kk_KZ.ts \
-  qt/locale/titcoin_km_KH.ts \
-  qt/locale/titcoin_ko_KR.ts \
-  qt/locale/titcoin_ko.ts \
-  qt/locale/titcoin_ku_IQ.ts \
-  qt/locale/titcoin_ky.ts \
-  qt/locale/titcoin_la.ts \
-  qt/locale/titcoin_lt.ts \
-  qt/locale/titcoin_lv_LV.ts \
-  qt/locale/titcoin_mk_MK.ts \
-  qt/locale/titcoin_ml.ts \
-  qt/locale/titcoin_mn.ts \
-  qt/locale/titcoin_mr_IN.ts \
-  qt/locale/titcoin_ms_MY.ts \
-  qt/locale/titcoin_ms.ts \
-  qt/locale/titcoin_my.ts \
-  qt/locale/titcoin_nb_NO.ts \
-  qt/locale/titcoin_nb.ts \
-  qt/locale/titcoin_ne.ts \
-  qt/locale/titcoin_nl_NL.ts \
-  qt/locale/titcoin_nl.ts \
-  qt/locale/titcoin_pam.ts \
-  qt/locale/titcoin_pl_PL.ts \
-  qt/locale/titcoin_pl.ts \
-  qt/locale/titcoin_pt_BR.ts \
-  qt/locale/titcoin_pt_PT.ts \
-  qt/locale/titcoin_pt.ts \
-  qt/locale/titcoin_ro_RO.ts \
-  qt/locale/titcoin_ro.ts \
-  qt/locale/titcoin_ru_RU.ts \
-  qt/locale/titcoin_ru.ts \
-  qt/locale/titcoin_si.ts \
-  qt/locale/titcoin_sk.ts \
-  qt/locale/titcoin_sl_SI.ts \
-  qt/locale/titcoin_sn.ts \
-  qt/locale/titcoin_sq.ts \
-  qt/locale/titcoin_sr@latin.ts \
-  qt/locale/titcoin_sr.ts \
-  qt/locale/titcoin_sv.ts \
-  qt/locale/titcoin_ta_IN.ts \
-  qt/locale/titcoin_ta.ts \
-  qt/locale/titcoin_te.ts \
-  qt/locale/titcoin_th_TH.ts \
-  qt/locale/titcoin_th.ts \
-  qt/locale/titcoin_tr_TR.ts \
-  qt/locale/titcoin_tr.ts \
-  qt/locale/titcoin_uk.ts \
-  qt/locale/titcoin_ur_PK.ts \
-  qt/locale/titcoin_uz@Cyrl.ts \
-  qt/locale/titcoin_vi.ts \
-  qt/locale/titcoin_vi_VN.ts \
-  qt/locale/titcoin_zh_CN.ts \
-  qt/locale/titcoin_zh-Hans.ts \
-  qt/locale/titcoin_zh_HK.ts \
-  qt/locale/titcoin_zh.ts \
-  qt/locale/titcoin_zh_TW.ts
+  qt/locale/kriptoyng_af.ts \
+  qt/locale/kriptoyng_af_ZA.ts \
+  qt/locale/kriptoyng_am.ts \
+  qt/locale/kriptoyng_ar.ts \
+  qt/locale/kriptoyng_be_BY.ts \
+  qt/locale/kriptoyng_bg_BG.ts \
+  qt/locale/kriptoyng_bg.ts \
+  qt/locale/kriptoyng_bn.ts \
+  qt/locale/kriptoyng_bs.ts \
+  qt/locale/kriptoyng_ca_ES.ts \
+  qt/locale/kriptoyng_ca.ts \
+  qt/locale/kriptoyng_ca@valencia.ts \
+  qt/locale/kriptoyng_cs_CZ.ts \
+  qt/locale/kriptoyng_cs.ts \
+  qt/locale/kriptoyng_cy.ts \
+  qt/locale/kriptoyng_da.ts \
+  qt/locale/kriptoyng_de_DE.ts \
+  qt/locale/kriptoyng_de.ts \
+  qt/locale/kriptoyng_el_GR.ts \
+  qt/locale/kriptoyng_el.ts \
+  qt/locale/kriptoyng_en_AU.ts \
+  qt/locale/kriptoyng_en_GB.ts \
+  qt/locale/kriptoyng_en.ts \
+  qt/locale/kriptoyng_eo.ts \
+  qt/locale/kriptoyng_es_419.ts \
+  qt/locale/kriptoyng_es_AR.ts \
+  qt/locale/kriptoyng_es_CL.ts \
+  qt/locale/kriptoyng_es_CO.ts \
+  qt/locale/kriptoyng_es_DO.ts \
+  qt/locale/kriptoyng_es_ES.ts \
+  qt/locale/kriptoyng_es_MX.ts \
+  qt/locale/kriptoyng_es.ts \
+  qt/locale/kriptoyng_es_UY.ts \
+  qt/locale/kriptoyng_es_VE.ts \
+  qt/locale/kriptoyng_et_EE.ts \
+  qt/locale/kriptoyng_et.ts \
+  qt/locale/kriptoyng_eu_ES.ts \
+  qt/locale/kriptoyng_fa_IR.ts \
+  qt/locale/kriptoyng_fa.ts \
+  qt/locale/kriptoyng_fi.ts \
+  qt/locale/kriptoyng_fr_CA.ts \
+  qt/locale/kriptoyng_fr_FR.ts \
+  qt/locale/kriptoyng_fr.ts \
+  qt/locale/kriptoyng_gl.ts \
+  qt/locale/kriptoyng_he_IL.ts \
+  qt/locale/kriptoyng_he.ts \
+  qt/locale/kriptoyng_hi_IN.ts \
+  qt/locale/kriptoyng_hr.ts \
+  qt/locale/kriptoyng_hu_HU.ts \
+  qt/locale/kriptoyng_hu.ts \
+  qt/locale/kriptoyng_id_ID.ts \
+  qt/locale/kriptoyng_id.ts \
+  qt/locale/kriptoyng_is.ts \
+  qt/locale/kriptoyng_it_IT.ts \
+  qt/locale/kriptoyng_it.ts \
+  qt/locale/kriptoyng_ja_JP.ts \
+  qt/locale/kriptoyng_ja.ts \
+  qt/locale/kriptoyng_ka.ts \
+  qt/locale/kriptoyng_kk_KZ.ts \
+  qt/locale/kriptoyng_km_KH.ts \
+  qt/locale/kriptoyng_ko_KR.ts \
+  qt/locale/kriptoyng_ko.ts \
+  qt/locale/kriptoyng_ku_IQ.ts \
+  qt/locale/kriptoyng_ky.ts \
+  qt/locale/kriptoyng_la.ts \
+  qt/locale/kriptoyng_lt.ts \
+  qt/locale/kriptoyng_lv_LV.ts \
+  qt/locale/kriptoyng_mk_MK.ts \
+  qt/locale/kriptoyng_ml.ts \
+  qt/locale/kriptoyng_mn.ts \
+  qt/locale/kriptoyng_mr_IN.ts \
+  qt/locale/kriptoyng_ms_MY.ts \
+  qt/locale/kriptoyng_ms.ts \
+  qt/locale/kriptoyng_my.ts \
+  qt/locale/kriptoyng_nb_NO.ts \
+  qt/locale/kriptoyng_nb.ts \
+  qt/locale/kriptoyng_ne.ts \
+  qt/locale/kriptoyng_nl_NL.ts \
+  qt/locale/kriptoyng_nl.ts \
+  qt/locale/kriptoyng_pam.ts \
+  qt/locale/kriptoyng_pl_PL.ts \
+  qt/locale/kriptoyng_pl.ts \
+  qt/locale/kriptoyng_pt_BR.ts \
+  qt/locale/kriptoyng_pt_PT.ts \
+  qt/locale/kriptoyng_pt.ts \
+  qt/locale/kriptoyng_ro_RO.ts \
+  qt/locale/kriptoyng_ro.ts \
+  qt/locale/kriptoyng_ru_RU.ts \
+  qt/locale/kriptoyng_ru.ts \
+  qt/locale/kriptoyng_si.ts \
+  qt/locale/kriptoyng_sk.ts \
+  qt/locale/kriptoyng_sl_SI.ts \
+  qt/locale/kriptoyng_sn.ts \
+  qt/locale/kriptoyng_sq.ts \
+  qt/locale/kriptoyng_sr@latin.ts \
+  qt/locale/kriptoyng_sr.ts \
+  qt/locale/kriptoyng_sv.ts \
+  qt/locale/kriptoyng_ta_IN.ts \
+  qt/locale/kriptoyng_ta.ts \
+  qt/locale/kriptoyng_te.ts \
+  qt/locale/kriptoyng_th_TH.ts \
+  qt/locale/kriptoyng_th.ts \
+  qt/locale/kriptoyng_tr_TR.ts \
+  qt/locale/kriptoyng_tr.ts \
+  qt/locale/kriptoyng_uk.ts \
+  qt/locale/kriptoyng_ur_PK.ts \
+  qt/locale/kriptoyng_uz@Cyrl.ts \
+  qt/locale/kriptoyng_vi.ts \
+  qt/locale/kriptoyng_vi_VN.ts \
+  qt/locale/kriptoyng_zh_CN.ts \
+  qt/locale/kriptoyng_zh-Hans.ts \
+  qt/locale/kriptoyng_zh_HK.ts \
+  qt/locale/kriptoyng_zh.ts \
+  qt/locale/kriptoyng_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -146,10 +146,10 @@ QT_MOC_CPP = \
   qt/moc_addresstablemodel.cpp \
   qt/moc_askpassphrasedialog.cpp \
   qt/moc_bantablemodel.cpp \
-  qt/moc_titcoinaddressvalidator.cpp \
-  qt/moc_titcoinamountfield.cpp \
-  qt/moc_titcoingui.cpp \
-  qt/moc_titcoinunits.cpp \
+  qt/moc_kriptoyngaddressvalidator.cpp \
+  qt/moc_kriptoyngamountfield.cpp \
+  qt/moc_kriptoynggui.cpp \
+  qt/moc_kriptoyngunits.cpp \
   qt/moc_callback.cpp \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
@@ -189,36 +189,36 @@ QT_MOC_CPP = \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp
 
-TITCOIN_MM = \
+kriptoyng_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/titcoin.moc \
-  qt/titcoinamountfield.moc \
+  qt/kriptoyng.moc \
+  qt/kriptoyngamountfield.moc \
   qt/callback.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_titcoin.cpp
-QT_QRC = qt/titcoin.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_titcoin_locale.cpp
-QT_QRC_LOCALE = qt/titcoin_locale.qrc
+QT_QRC_CPP = qt/qrc_kriptoyng.cpp
+QT_QRC = qt/kriptoyng.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_kriptoyng_locale.cpp
+QT_QRC_LOCALE = qt/kriptoyng_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
 
-TITCOIN_QT_H = \
+kriptoyng_QT_H = \
   qt/addressbookpage.h \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
   qt/bantablemodel.h \
-  qt/titcoinaddressvalidator.h \
-  qt/titcoinamountfield.h \
-  qt/titcoingui.h \
-  qt/titcoinunits.h \
+  qt/kriptoyngaddressvalidator.h \
+  qt/kriptoyngamountfield.h \
+  qt/kriptoynggui.h \
+  qt/kriptoyngunits.h \
   qt/callback.h \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
@@ -270,9 +270,9 @@ RES_ICONS = \
   qt/res/icons/address-book.png \
   qt/res/icons/about.png \
   qt/res/icons/about_qt.png \
-  qt/res/icons/titcoin.ico \
-  qt/res/icons/titcoin_testnet.ico \
-  qt/res/icons/titcoin.png \
+  qt/res/icons/kriptoyng.ico \
+  qt/res/icons/kriptoyng_testnet.ico \
+  qt/res/icons/kriptoyng.png \
   qt/res/icons/chevron.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -322,12 +322,12 @@ RES_ICONS = \
   qt/res/icons/warning.png \
   qt/res/icons/verify.png
 
-TITCOIN_QT_BASE_CPP = \
+kriptoyng_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
-  qt/titcoinaddressvalidator.cpp \
-  qt/titcoinamountfield.cpp \
-  qt/titcoingui.cpp \
-  qt/titcoinunits.cpp \
+  qt/kriptoyngaddressvalidator.cpp \
+  qt/kriptoyngamountfield.cpp \
+  qt/kriptoynggui.cpp \
+  qt/kriptoyngunits.cpp \
   qt/clientmodel.cpp \
   qt/csvmodelwriter.cpp \
   qt/guiutil.cpp \
@@ -346,9 +346,9 @@ TITCOIN_QT_BASE_CPP = \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 
-TITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+kriptoyng_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
 
-TITCOIN_QT_WALLET_CPP = \
+kriptoyng_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -376,31 +376,31 @@ TITCOIN_QT_WALLET_CPP = \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp
 
-TITCOIN_QT_CPP = $(TITCOIN_QT_BASE_CPP)
+kriptoyng_QT_CPP = $(kriptoyng_QT_BASE_CPP)
 if TARGET_WINDOWS
-TITCOIN_QT_CPP += $(TITCOIN_QT_WINDOWS_CPP)
+kriptoyng_QT_CPP += $(kriptoyng_QT_WINDOWS_CPP)
 endif
 if ENABLE_WALLET
-TITCOIN_QT_CPP += $(TITCOIN_QT_WALLET_CPP)
+kriptoyng_QT_CPP += $(kriptoyng_QT_WALLET_CPP)
 endif
 
 RES_IMAGES = 
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-TITCOIN_RC = qt/res/titcoin-qt-res.rc
+kriptoyng_RC = qt/res/kriptoyng-qt-res.rc
 
-TITCOIN_QT_INCLUDES = -DQT_NO_KEYWORDS
+kriptoyng_QT_INCLUDES = -DQT_NO_KEYWORDS
 
-qt_libtitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES) $(TITCOIN_QT_INCLUDES) \
+qt_libkriptoyngqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES) $(kriptoyng_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_libtitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_libtitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+qt_libkriptoyngqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libkriptoyngqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_libtitcoinqt_a_SOURCES = $(TITCOIN_QT_CPP) $(TITCOIN_QT_H) $(QT_FORMS_UI) \
+qt_libkriptoyngqt_a_SOURCES = $(kriptoyng_QT_CPP) $(kriptoyng_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
 
-nodist_qt_libtitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+nodist_qt_libkriptoyngqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
 # forms/foo.h -> forms/ui_foo.h
@@ -409,71 +409,71 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libtitcoinqt_a_OBJECTS) $(qt_titcoin_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libkriptoyngqt_a_OBJECTS) $(qt_kriptoyng_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# titcoin-qt binary #
-qt_titcoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(TITCOIN_INCLUDES) $(TITCOIN_QT_INCLUDES) \
+# kriptoyng-qt binary #
+qt_kriptoyng_qt_CPPFLAGS = $(AM_CPPFLAGS) $(kriptoyng_INCLUDES) $(kriptoyng_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_titcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_kriptoyng_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_titcoin_qt_SOURCES = qt/titcoin.cpp
+qt_kriptoyng_qt_SOURCES = qt/kriptoyng.cpp
 if TARGET_DARWIN
-  qt_titcoin_qt_SOURCES += $(TITCOIN_MM)
+  qt_kriptoyng_qt_SOURCES += $(kriptoyng_MM)
 endif
 if TARGET_WINDOWS
-  qt_titcoin_qt_SOURCES += $(TITCOIN_RC)
+  qt_kriptoyng_qt_SOURCES += $(kriptoyng_RC)
 endif
-qt_titcoin_qt_LDADD = qt/libtitcoinqt.a $(LIBTITCOIN_SERVER)
+qt_kriptoyng_qt_LDADD = qt/libkriptoyngqt.a $(LIBkriptoyng_SERVER)
 if ENABLE_WALLET
-qt_titcoin_qt_LDADD += $(LIBTITCOIN_WALLET)
+qt_kriptoyng_qt_LDADD += $(LIBkriptoyng_WALLET)
 endif
 if ENABLE_ZMQ
-qt_titcoin_qt_LDADD += $(LIBTITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_kriptoyng_qt_LDADD += $(LIBkriptoyng_ZMQ) $(ZMQ_LIBS)
 endif
-qt_titcoin_qt_LDADD += $(LIBTITCOIN_CLI) $(LIBTITCOIN_COMMON) $(LIBTITCOIN_UTIL) $(LIBTITCOIN_CONSENSUS) $(LIBTITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_kriptoyng_qt_LDADD += $(LIBkriptoyng_CLI) $(LIBkriptoyng_COMMON) $(LIBkriptoyng_UTIL) $(LIBkriptoyng_CONSENSUS) $(LIBkriptoyng_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_titcoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_titcoin_qt_LIBTOOLFLAGS = --tag CXX
+qt_kriptoyng_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_kriptoyng_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/titcoinstrings.cpp: $(libtitcoin_server_a_SOURCES) $(libtitcoin_wallet_a_SOURCES) $(libtitcoin_common_a_SOURCES) $(libtitcoin_zmq_a_SOURCES) $(libtitcoin_consensus_a_SOURCES) $(libtitcoin_util_a_SOURCES)
+$(srcdir)/qt/kriptoyngstrings.cpp: $(libkriptoyng_server_a_SOURCES) $(libkriptoyng_wallet_a_SOURCES) $(libkriptoyng_common_a_SOURCES) $(libkriptoyng_zmq_a_SOURCES) $(libkriptoyng_consensus_a_SOURCES) $(libkriptoyng_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/titcoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(TITCOIN_QT_BASE_CPP) qt/titcoin.cpp $(TITCOIN_QT_WINDOWS_CPP) $(TITCOIN_QT_WALLET_CPP) $(TITCOIN_QT_H) $(TITCOIN_MM)
+translate: $(srcdir)/qt/kriptoyngstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(kriptoyng_QT_BASE_CPP) qt/kriptoyng.cpp $(kriptoyng_QT_WINDOWS_CPP) $(kriptoyng_QT_WALLET_CPP) $(kriptoyng_QT_H) $(kriptoyng_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/titcoin_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/kriptoyng_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name titcoin_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name kriptoyng_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name titcoin $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name kriptoyng $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libtitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_titcoin_locale.qrc
+CLEAN_QT = $(nodist_qt_libkriptoyngqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_kriptoyng_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-titcoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libtitcoinqt_a_OBJECTS) $(qt_titcoin_qt_OBJECTS) qt/titcoin-qt$(EXEEXT) $(LIBTITCOINQT)
+kriptoyng_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libkriptoyngqt_a_OBJECTS) $(qt_kriptoyng_qt_OBJECTS) qt/kriptoyng-qt$(EXEEXT) $(LIBkriptoyngQT)
 
-titcoin_qt : qt/titcoin-qt$(EXEEXT)
+kriptoyng_qt : qt/kriptoyng-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

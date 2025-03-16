@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_SCRIPT_ISMINE_H
-#define TITCOIN_SCRIPT_ISMINE_H
+#ifndef kriptoyng_SCRIPT_ISMINE_H
+#define kriptoyng_SCRIPT_ISMINE_H
 
 #include <script/standard.h>
 
@@ -38,4 +38,4 @@ isminetype IsMine(const CKeyStore& keystore, const CScript& scriptPubKey, SigVer
 isminetype IsMine(const CKeyStore& keystore, const CTxDestination& dest, bool& isInvalid, SigVersion = SIGVERSION_BASE);
 isminetype IsMine(const CKeyStore& keystore, const CTxDestination& dest, SigVersion = SIGVERSION_BASE);
 
-#endif // TITCOIN_SCRIPT_ISMINE_H
+#endif // kriptoyng_SCRIPT_ISMINE_H

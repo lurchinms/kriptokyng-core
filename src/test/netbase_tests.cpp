@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <netbase.h>
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 #include <utilstrencodings.h>
 
 #include <string>

@@ -2,16 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_CHAINPARAMSBASE_H
-#define TITCOIN_CHAINPARAMSBASE_H
+#ifndef kriptoyng_CHAINPARAMSBASE_H
+#define kriptoyng_CHAINPARAMSBASE_H
 
 #include <memory>
 #include <string>
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between titcoin-cli and titcoind)
- * of a given instance of the Titcoin system.
+ * CBaseChainParams defines the base parameters (shared between kriptoyng-cli and kriptoyngd)
+ * of a given instance of the kriptoyng system.
  */
 class CBaseChainParams
 {
@@ -59,4 +59,4 @@ void SelectBaseParams(const std::string& chain);
  */
 std::string ChainNameFromCommandLine();
 
-#endif // TITCOIN_CHAINPARAMSBASE_H
+#endif // kriptoyng_CHAINPARAMSBASE_H

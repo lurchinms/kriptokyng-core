@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_QT_PAYMENTSERVER_H
-#define TITCOIN_QT_PAYMENTSERVER_H
+#ifndef kriptoyng_QT_PAYMENTSERVER_H
+#define kriptoyng_QT_PAYMENTSERVER_H
 
 // This class handles payment requests from clicking on
-// titcoin: URIs
+// kriptoyng: URIs
 //
 // This is somewhat tricky, because we have to deal with
 // the situation where the user clicks on a link during
@@ -145,4 +145,4 @@ private:
     OptionsModel *optionsModel;
 };
 
-#endif // TITCOIN_QT_PAYMENTSERVER_H
+#endif // kriptoyng_QT_PAYMENTSERVER_H

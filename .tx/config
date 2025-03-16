@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[titcoin.qt-translation-016x]
-file_filter = src/qt/locale/titcoin_<lang>.ts
-source_file = src/qt/locale/titcoin_en.ts
+[kriptoyng.qt-translation-016x]
+file_filter = src/qt/locale/kriptoyng_<lang>.ts
+source_file = src/qt/locale/kriptoyng_en.ts
 source_lang = en

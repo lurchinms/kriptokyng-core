@@ -21,12 +21,12 @@ from test_framework.mininode import (
     network_thread_start,
     wait_until,
 )
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import (
     assert_equal,
 )
 
-class P2PFingerprintTest(TitcoinTestFramework):
+class P2PFingerprintTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

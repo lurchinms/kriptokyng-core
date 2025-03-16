@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_TXMEMPOOL_H
-#define TITCOIN_TXMEMPOOL_H
+#ifndef kriptoyng_TXMEMPOOL_H
+#define kriptoyng_TXMEMPOOL_H
 
 #include <memory>
 #include <set>
@@ -796,4 +796,4 @@ struct DisconnectedBlockTransactions {
     }
 };
 
-#endif // TITCOIN_TXMEMPOOL_H
+#endif // kriptoyng_TXMEMPOOL_H

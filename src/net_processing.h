@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_NET_PROCESSING_H
-#define TITCOIN_NET_PROCESSING_H
+#ifndef kriptoyng_NET_PROCESSING_H
+#define kriptoyng_NET_PROCESSING_H
 
 #include <net.h>
 #include <validationinterface.h>
@@ -81,4 +81,4 @@ bool GetNodeStateStats(NodeId nodeid, CNodeStateStats &stats);
 /** Increase a node's misbehavior score. */
 void Misbehaving(NodeId nodeid, int howmuch);
 
-#endif // TITCOIN_NET_PROCESSING_H
+#endif // kriptoyng_NET_PROCESSING_H

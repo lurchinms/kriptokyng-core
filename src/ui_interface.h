@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_UI_INTERFACE_H
-#define TITCOIN_UI_INTERFACE_H
+#ifndef kriptoyng_UI_INTERFACE_H
+#define kriptoyng_UI_INTERFACE_H
 
 #include <stdint.h>
 #include <string>
@@ -122,4 +122,4 @@ std::string AmountErrMsg(const char* const optname, const std::string& strValue)
 
 extern CClientUIInterface uiInterface;
 
-#endif // TITCOIN_UI_INTERFACE_H
+#endif // kriptoyng_UI_INTERFACE_H

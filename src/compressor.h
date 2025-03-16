@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_COMPRESSOR_H
-#define TITCOIN_COMPRESSOR_H
+#ifndef kriptoyng_COMPRESSOR_H
+#define kriptoyng_COMPRESSOR_H
 
 #include <primitives/transaction.h>
 #include <script/script.h>
@@ -118,4 +118,4 @@ public:
     }
 };
 
-#endif // TITCOIN_COMPRESSOR_H
+#endif // kriptoyng_COMPRESSOR_H

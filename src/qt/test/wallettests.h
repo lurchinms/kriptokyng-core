@@ -1,5 +1,5 @@
-#ifndef TITCOIN_QT_TEST_WALLETTESTS_H
-#define TITCOIN_QT_TEST_WALLETTESTS_H
+#ifndef kriptoyng_QT_TEST_WALLETTESTS_H
+#define kriptoyng_QT_TEST_WALLETTESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -12,4 +12,4 @@ private Q_SLOTS:
     void walletTests();
 };
 
-#endif // TITCOIN_QT_TEST_WALLETTESTS_H
+#endif // kriptoyng_QT_TEST_WALLETTESTS_H

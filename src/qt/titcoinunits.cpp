@@ -2,28 +2,28 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <qt/titcoinunits.h>
+#include <qt/kriptoyngunits.h>
 
 #include <primitives/transaction.h>
 
 #include <QStringList>
 
-TitcoinUnits::TitcoinUnits(QObject *parent):
+kriptoyngUnits::kriptoyngUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<TitcoinUnits::Unit> TitcoinUnits::availableUnits()
+QList<kriptoyngUnits::Unit> kriptoyngUnits::availableUnits()
 {
-    QList<TitcoinUnits::Unit> unitlist;
+    QList<kriptoyngUnits::Unit> unitlist;
     unitlist.append(TIT);
     unitlist.append(mTIT);
     unitlist.append(uTIT);
     return unitlist;
 }
 
-bool TitcoinUnits::valid(int unit)
+bool kriptoyngUnits::valid(int unit)
 {
     switch(unit)
     {
@@ -36,7 +36,7 @@ bool TitcoinUnits::valid(int unit)
     }
 }
 
-QString TitcoinUnits::longName(int unit)
+QString kriptoyngUnits::longName(int unit)
 {
     switch(unit)
     {
@@ -47,7 +47,7 @@ QString TitcoinUnits::longName(int unit)
     }
 }
 
-QString TitcoinUnits::shortName(int unit)
+QString kriptoyngUnits::shortName(int unit)
 {
     switch(unit)
     {
@@ -56,18 +56,18 @@ QString TitcoinUnits::shortName(int unit)
     }
 }
 
-QString TitcoinUnits::description(int unit)
+QString kriptoyngUnits::description(int unit)
 {
     switch(unit)
     {
-    case TIT: return QString("Titcoins");
-    case mTIT: return QString("Milli-Titcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uTIT: return QString("Micro-Titcoins (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case TIT: return QString("kriptoyngs");
+    case mTIT: return QString("Milli-kriptoyngs (1 / 1" THIN_SP_UTF8 "000)");
+    case uTIT: return QString("Micro-kriptoyngs (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
 
-qint64 TitcoinUnits::factor(int unit)
+qint64 kriptoyngUnits::factor(int unit)
 {
     switch(unit)
     {
@@ -78,7 +78,7 @@ qint64 TitcoinUnits::factor(int unit)
     }
 }
 
-int TitcoinUnits::decimals(int unit)
+int kriptoyngUnits::decimals(int unit)
 {
     switch(unit)
     {
@@ -89,7 +89,7 @@ int TitcoinUnits::decimals(int unit)
     }
 }
 
-QString TitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
+QString kriptoyngUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -128,12 +128,12 @@ QString TitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString TitcoinUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString kriptoyngUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + shortName(unit);
 }
 
-QString TitcoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString kriptoyngUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
@@ -141,7 +141,7 @@ QString TitcoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool p
 }
 
 
-bool TitcoinUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool kriptoyngUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -180,23 +180,23 @@ bool TitcoinUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-QString TitcoinUnits::getAmountColumnTitle(int unit)
+QString kriptoyngUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (TitcoinUnits::valid(unit))
+    if (kriptoyngUnits::valid(unit))
     {
-        amountTitle += " ("+TitcoinUnits::shortName(unit) + ")";
+        amountTitle += " ("+kriptoyngUnits::shortName(unit) + ")";
     }
     return amountTitle;
 }
 
-int TitcoinUnits::rowCount(const QModelIndex &parent) const
+int kriptoyngUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant TitcoinUnits::data(const QModelIndex &index, int role) const
+QVariant kriptoyngUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -216,7 +216,7 @@ QVariant TitcoinUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount TitcoinUnits::maxMoney()
+CAmount kriptoyngUnits::maxMoney()
 {
     return MAX_MONEY;
 }

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_ADDRDB_H
-#define TITCOIN_ADDRDB_H
+#ifndef kriptoyng_ADDRDB_H
+#define kriptoyng_ADDRDB_H
 
 #include <fs.h>
 #include <serialize.h>
@@ -99,4 +99,4 @@ public:
     bool Read(banmap_t& banSet);
 };
 
-#endif // TITCOIN_ADDRDB_H
+#endif // kriptoyng_ADDRDB_H

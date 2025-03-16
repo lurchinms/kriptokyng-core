@@ -1,18 +1,18 @@
-Titcoin Wallet
+kriptoyng Wallet
 =====================================
-[![Build Status](https://travis-ci.com/titcoin/titcoin.svg?branch=master)](https://travis-ci.com/titcoin/titcoin)
+[![Build Status](https://travis-ci.com/kriptoyng/kriptoyng.svg?branch=master)](https://travis-ci.com/kriptoyng/kriptoyng)
 
 About
 -----
 
-This is the current Titcoin wallet made by Gandalf86. For more info about Titcoin, see https://titcoin.github.io
+This is the current kriptoyng wallet made by Gandalf86. For more info about kriptoyng, see https://kriptoyng.github.io
 
-Titcoin is based on [Bitcoin Core](https://github.com/bitcoin/bitcoin) version 0.16.3, all credits go to the Bitcoin Core developers. Most documentation files have been left untouched to avoid confusion.
+kriptoyng is based on [Bitcoin Core](https://github.com/bitcoin/bitcoin) version 0.16.3, all credits go to the Bitcoin Core developers. Most documentation files have been left untouched to avoid confusion.
 
 License
 -------
 
-Bitcoin Core and Titcoin are released under the terms of the MIT license. See [COPYING](COPYING) for more
+Bitcoin Core and kriptoyng are released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Building

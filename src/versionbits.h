@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_CONSENSUS_VERSIONBITS
-#define TITCOIN_CONSENSUS_VERSIONBITS
+#ifndef kriptoyng_CONSENSUS_VERSIONBITS
+#define kriptoyng_CONSENSUS_VERSIONBITS
 
 #include <chain.h>
 #include <map>

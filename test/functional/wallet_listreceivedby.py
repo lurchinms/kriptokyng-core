@@ -5,7 +5,7 @@
 """Test the listreceivedbyaddress RPC."""
 from decimal import Decimal
 
-from test_framework.test_framework import TitcoinTestFramework
+from test_framework.test_framework import kriptoyngTestFramework
 from test_framework.util import (
     assert_array_result,
     assert_equal,
@@ -14,7 +14,7 @@ from test_framework.util import (
 )
 
 
-class ReceivedByTest(TitcoinTestFramework):
+class ReceivedByTest(kriptoyngTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 

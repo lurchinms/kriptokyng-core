@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef TITCOIN_BLOOM_H
-#define TITCOIN_BLOOM_H
+#ifndef kriptoyng_BLOOM_H
+#define kriptoyng_BLOOM_H
 
 #include <serialize.h>
 
@@ -140,4 +140,4 @@ private:
     int nHashFuncs;
 };
 
-#endif // TITCOIN_BLOOM_H
+#endif // kriptoyng_BLOOM_H

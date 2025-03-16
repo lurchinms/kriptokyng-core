@@ -12,7 +12,7 @@
 #include <crypto/hmac_sha512.h>
 #include <random.h>
 #include <utilstrencodings.h>
-#include <test/test_titcoin.h>
+#include <test/test_kriptoyng.h>
 
 #include <vector>
 
